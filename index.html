@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#2448b8" />
+<title>AMINE LAB — Học Hóa học 12[cite: 1]</title>
+<style>
+:root{--navy:#101b36;--navy2:#182746;--cyan:#35d6f2;--mint:#37d6b0;--violet:#8b7cff;--paper:#f5f7fb;--ink:#18223a;--muted:#68748d;--amber:#ffb454;--line:#e2e8f2;--white:#fff;--shadow:0 18px 55px rgba(20,35,67,.12);--radius:22px}
+*{box-sizing:border-box}html{font-size:17px;scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;font-family:"Be Vietnam Pro",Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--paper);color:var(--ink);line-height:1.65}button,input,select,textarea{font:inherit}button,a{ -webkit-tap-highlight-color:transparent}a{color:inherit;text-decoration:none}button{cursor:pointer}.container{width:min(1160px,calc(100% - 40px));margin:auto}.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.77rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:#138da6}.eyebrow:before{content:"";display:block;width:22px;height:2px;background:currentColor}.section{padding:88px 0}.section-head{max-width:720px;margin:0 0 34px}.section-head h2{font-size:clamp(2rem,4vw,3.1rem);line-height:1.13;letter-spacing:-.04em;margin:12px 0}.section-head p{color:var(--muted);font-size:1.03rem;margin:0}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 19px;border:1px solid transparent;border-radius:13px;font-weight:750;transition:transform .2s,background .2s,border .2s;cursor:pointer}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--cyan);color:#08243a;box-shadow:0 8px 24px rgba(53,214,242,.18)}.btn-outline{border-color:rgba(255,255,255,.26);color:#fff;background:rgba(255,255,255,.05)}.btn-dark{background:var(--navy);color:white}.btn-light{background:#eefbfe;color:#08667a;border-color:#c8f4fb}.small{font-size:.86rem}.muted{color:var(--muted)}.tag{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:99px;background:#eaf9fc;color:#087d94;font-size:.76rem;font-weight:800}.tag.purple{background:#f0edff;color:#6554c7}.tag.amber{background:#fff4e5;color:#945a0b}.tag.green{background:#e6faf3;color:#087c60}.topbar{position:sticky;top:0;z-index:50;background:rgba(16,27,54,.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08);color:#fff}.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.05em}.brand-mark{width:39px;height:39px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,var(--cyan),var(--mint));color:#0c2540;font-size:1.2rem;box-shadow:0 6px 22px rgba(53,214,242,.2)}.brand small{display:block;font-weight:500;font-size:.62rem;color:#a9b8d5;letter-spacing:.12em}.navlinks{display:flex;align-items:center;gap:22px}.navlinks a{font-size:.85rem;color:#cad5eb;transition:color .2s}.navlinks a:hover,.navlinks a.active{color:var(--cyan)}.nav-cta{padding:10px 14px;font-size:.83rem}.menu-toggle{display:none;border:1px solid rgba(255,255,255,.2);background:transparent;color:white;border-radius:10px;padding:8px 12px}
+.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 76% 24%,rgba(53,214,242,.16),transparent 29%),radial-gradient(circle at 16% 88%,rgba(139,124,255,.14),transparent 34%),linear-gradient(125deg,#101b36,#162849 60%,#0c2942);color:white;padding:86px 0 76px;min-height:590px}.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,black,transparent)}.hero-grid{position:relative;display:grid;grid-template-columns:1.06fr .94fr;gap:42px;align-items:center}.hero .eyebrow{color:var(--cyan)}.hero h1{font-size:clamp(3rem,7vw,5.7rem);line-height:.96;letter-spacing:-.065em;margin:20px 0 23px}.hero h1 span{color:var(--cyan)}.hero-copy{max-width:600px;color:#c9d7ed;font-size:1.1rem}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:27px 0 28px}.hero-points{display:flex;flex-wrap:wrap;gap:17px;color:#c2d0e7;font-size:.86rem}.hero-points span{display:flex;align-items:center;gap:7px}.hero-points i{display:inline-block;width:7px;height:7px;background:var(--mint);border-radius:50%;box-shadow:0 0 11px var(--mint)}
+.lab-art{min-height:380px;position:relative;display:grid;place-items:center;perspective:900px}.orbit{position:absolute;border:1px solid rgba(53,214,242,.23);border-radius:50%;transform:rotateX(65deg);animation:orbit 18s linear infinite}.orbit.one{width:340px;height:340px}.orbit.two{width:270px;height:270px;animation-duration:14s;animation-direction:reverse}.orbit:after{content:"";position:absolute;width:10px;height:10px;top:48%;left:-4px;border-radius:50%;background:var(--cyan);box-shadow:0 0 22px var(--cyan)}@keyframes orbit{to{transform:rotateX(65deg) rotateZ(360deg)}}.molecule{position:relative;width:250px;height:205px;filter:drop-shadow(0 16px 35px rgba(53,214,242,.12));animation:float 5s ease-in-out infinite}@keyframes float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-11px) rotate(2deg)}}.atom{position:absolute;width:62px;height:62px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.7);border-radius:50%;background:radial-gradient(circle at 30% 25%,#fff,#65dff4 35%,#1688a8 79%);color:#072d43;font-size:1rem;font-weight:900;box-shadow:inset -8px -9px 14px rgba(0,0,0,.19),0 0 22px rgba(53,214,242,.3)}.atom.n{width:68px;height:68px;left:93px;top:66px;background:radial-gradient(circle at 30% 25%,#fff,#c3baff 35%,#6551c8 79%);color:#1f1b58}.atom.h1{left:14px;top:20px;width:48px;height:48px}.atom.h2{right:18px;top:22px;width:48px;height:48px}.atom.c1{left:28px;bottom:17px;width:52px;height:52px;background:radial-gradient(circle at 30% 25%,#fff,#9fb0c6 35%,#526681 79%);color:#101b36}.atom.c2{right:26px;bottom:12px;width:52px;height:52px;background:radial-gradient(circle at 30% 25%,#fff,#9fb0c6 35%,#526681 79%);color:#101b36}.bond{height:6px;width:60px;background:linear-gradient(90deg,#8fa5c5,#e7f6ff,#7b92b8);border-radius:9px;position:absolute;transform-origin:left center;box-shadow:0 0 12px rgba(53,214,242,.15)}.bond.b1{left:51px;top:66px;transform:rotate(27deg)}.bond.b2{left:147px;top:82px;transform:rotate(-27deg)}.bond.b3{left:116px;top:124px;width:70px;transform:rotate(131deg)}.bond.b4{left:123px;top:124px;width:75px;transform:rotate(48deg)}.art-label{position:absolute;bottom:12px;right:4%;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);backdrop-filter:blur(10px);padding:12px 16px;border-radius:14px;font-size:.83rem;color:#c9d7ed}.art-label strong{display:block;color:white;font-size:.98rem}
+.stats{position:relative;margin-top:-28px;z-index:2}.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);background:white;border:1px solid var(--line);border-radius:19px;box-shadow:var(--shadow);overflow:hidden}.stat{padding:23px 28px;display:flex;align-items:center;gap:15px}.stat+.stat{border-left:1px solid var(--line)}.stat-icon{width:45px;height:45px;border-radius:14px;background:#eaf9fc;color:#087d94;display:grid;place-items:center;font-size:1.2rem}.stat strong{display:block;font-size:1.12rem}.stat span{font-size:.83rem;color:var(--muted)}
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 5px 18px rgba(18,35,68,.035);transition:transform .22s,box-shadow .22s,border .22s}.card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#bdeef5}.card-icon{width:49px;height:49px;border-radius:15px;display:grid;place-items:center;background:#e9fafe;color:#087c93;font-size:1.4rem;margin-bottom:17px}.card-icon.violet{background:#f0edff;color:#6754d5}.card-icon.amber{background:#fff4e4;color:#a16207}.card h3{font-size:1.12rem;line-height:1.35;margin:10px 0}.card p{font-size:.91rem;color:var(--muted);margin:0 0 16px}.equation{padding:13px 14px;background:#f4f7fb;border:1px solid #e8edf5;border-radius:12px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;line-height:1.7;overflow-wrap:anywhere;color:#1b3155;font-size:.91rem}.chem-name{font-size:.76rem;color:#71809b;margin-top:6px}.inline-link{border:0;background:transparent;color:#087d94;font-weight:800;padding:0;display:inline-flex;align-items:center;gap:6px}.inline-link:hover{text-decoration:underline}
+.pathway{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.path-card{padding:21px;border:1px solid var(--line);background:#fff;border-radius:18px;display:flex;gap:14px;align-items:flex-start}.path-num{width:34px;height:34px;flex:0 0 34px;display:grid;place-items:center;border-radius:11px;background:var(--navy);color:var(--cyan);font-weight:900}.path-card h3{margin:0 0 5px;font-size:1rem}.path-card p{margin:0;color:var(--muted);font-size:.88rem}
+.dark-section{background:linear-gradient(145deg,#101b36,#17294a);color:white;position:relative;overflow:hidden}.dark-section .section-head p{color:#b7c6df}.dark-section .eyebrow{color:var(--cyan)}.lab-layout{display:grid;grid-template-columns:330px 1fr;gap:22px;align-items:start}.panel{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:20px;overflow:hidden}.panel-head{padding:20px 22px;border-bottom:1px solid var(--line)}.panel-head h3{margin:0;font-size:1.05rem}.panel-head p{font-size:.82rem;color:var(--muted);margin:4px 0 0}.panel-body{padding:20px 22px}.exp-list{display:grid;gap:9px}.exp-option{width:100%;display:flex;align-items:flex-start;gap:12px;text-align:left;padding:13px;border:1px solid var(--line);background:#fff;border-radius:13px;color:var(--ink);transition:all .18s}.exp-option:hover{border-color:#87deed}.exp-option.active{border-color:#35bfd7;background:#effcff;box-shadow:inset 3px 0 var(--cyan)}.exp-icon{width:36px;height:36px;flex:0 0 36px;display:grid;place-items:center;border-radius:11px;background:#edf8fc;font-size:1.08rem}.exp-option strong{display:block;font-size:.87rem}.exp-option small{display:block;margin-top:2px;color:var(--muted);font-size:.74rem;line-height:1.4}.warning-box{margin-top:15px;padding:12px 13px;border-radius:12px;background:#fff6e8;border:1px solid #ffe4b8;color:#764914;font-size:.8rem}.lab-main{display:grid;gap:18px}.simulation{background:linear-gradient(150deg,#f6fbff,#e5f4f9);border:1px solid rgba(255,255,255,.2);border-radius:22px;overflow:hidden;color:var(--ink);position:relative}.sim-top{padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:1px solid rgba(17,56,83,.09)}.sim-top h3{margin:0;font-size:1.05rem}.sim-top p{margin:3px 0 0;font-size:.8rem;color:#61728b}.sim-stage{position:relative;min-height:315px;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at 50% 80%,rgba(77,180,206,.15),transparent 48%),linear-gradient(180deg,#edf8fc,#dbeaf2)}.shelf{position:absolute;top:24px;left:50%;transform:translateX(-50%);display:flex;gap:10px;align-items:end;z-index:2}.bottle{width:58px;height:83px;position:relative;border:1px solid rgba(55,90,118,.25);border-radius:10px 10px 14px 14px;background:linear-gradient(90deg,rgba(255,255,255,.75),rgba(255,255,255,.2),rgba(123,177,199,.25));box-shadow:0 8px 12px rgba(50,82,106,.09);cursor:pointer;transition:transform .2s}.bottle:hover{transform:translateY(-4px)}.bottle:before{content:"";position:absolute;width:23px;height:13px;left:16px;top:-10px;border-radius:4px 4px 2px 2px;background:#738ba6}.bottle .liquid{position:absolute;bottom:3px;left:3px;right:3px;height:49%;border-radius:4px 4px 10px 10px;background:rgba(89,196,217,.5);transition:background .5s,height .5s}.bottle.brown .liquid{background:rgba(171,112,32,.75)}.bottle.purple .liquid{background:rgba(139,124,255,.55)}.bottle label{position:absolute;top:39px;left:0;right:0;text-align:center;font-size:.6rem;font-weight:900;color:#233b55;z-index:2}.bottle.active{outline:3px solid var(--cyan);outline-offset:3px}.bench{position:absolute;bottom:33px;width:88%;height:18px;border-radius:5px;background:linear-gradient(180deg,#a2bbce,#6d8da9);box-shadow:0 9px 0 #58718a,0 15px 22px rgba(40,71,96,.14)}.stand{position:absolute;bottom:52px;width:130px;height:115px;left:50%;transform:translateX(-50%);border-bottom:8px solid #708da7;border-left:7px solid #8ba6bc;border-right:7px solid #8ba6bc;border-radius:0 0 5px 5px;opacity:.8}.stand:before{content:"";position:absolute;top:0;left:-20px;right:-20px;height:8px;border-radius:5px;background:#8ba6bc}.vessel{position:absolute;z-index:4;bottom:62px;left:50%;transform:translateX(-50%);width:108px;height:132px;filter:drop-shadow(0 8px 8px rgba(30,65,92,.1));transition:transform .45s}.vessel-neck{position:absolute;top:0;left:40px;width:28px;height:42px;border:3px solid rgba(76,130,157,.63);border-bottom:0;border-radius:6px 6px 0 0;background:rgba(255,255,255,.15)}.vessel-neck:after{content:"";position:absolute;top:-5px;left:-4px;width:30px;height:7px;border-radius:4px;background:#85a9bd}.flask-body{position:absolute;top:34px;left:5px;width:98px;height:96px;border:3px solid rgba(76,130,157,.63);border-top:0;border-radius:18px 18px 43px 43px;background:linear-gradient(110deg,rgba(255,255,255,.63),rgba(164,221,235,.17),rgba(255,255,255,.4));overflow:hidden}.flask-body:before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:rgba(76,130,157,.55)}.flask-liquid{position:absolute;left:0;right:0;bottom:0;height:46%;background:rgba(72,189,211,.56);transition:all 2.8s ease;border-radius:0 0 36px 36px}.flask-liquid.brown{background:rgba(177,118,48,.7)}.flask-liquid.clear{height:23%;background:rgba(135,220,233,.17)}.flask-liquid.mint{background:rgba(55,214,176,.5)}.precipitate{position:absolute;bottom:-1px;left:9px;right:9px;height:0;background:radial-gradient(circle,#fff 0 2px,transparent 2.5px) 0 0/9px 7px;transition:height 2.8s ease;border-radius:0 0 32px 32px}.precipitate.on{height:35%}.bubble{position:absolute;bottom:16px;left:20px;width:6px;height:6px;background:rgba(255,255,255,.9);border:1px solid rgba(65,158,181,.4);border-radius:50%;opacity:0}.bubbling .bubble{animation:rise 4.8s infinite}.bubble:nth-child(2){left:48px;animation-delay:.4s}.bubble:nth-child(3){left:66px;animation-delay:.8s}.bubble:nth-child(4){left:37px;animation-delay:1.1s}@keyframes rise{0%{transform:translateY(0) scale(.7);opacity:0}25%{opacity:.9}100%{transform:translateY(-75px) scale(1.2);opacity:0}}.reaction-glow{position:absolute;width:170px;height:150px;bottom:55px;left:50%;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(53,214,242,.23),transparent 70%);opacity:0;transition:opacity 1.5s}.reacting .reaction-glow{opacity:1;animation:pulse 3.8s infinite}@keyframes pulse{50%{transform:translateX(-50%) scale(1.18);opacity:.5}}.stage-caption{position:absolute;bottom:10px;left:18px;right:18px;text-align:center;color:#47637b;font-size:.78rem}.sim-label{position:absolute;top:15px;right:16px;background:rgba(255,255,255,.7);border:1px solid rgba(98,143,168,.2);border-radius:10px;padding:7px 10px;font-size:.72rem;color:#557188;z-index:5}.reaction-status{display:flex;align-items:center;gap:9px;padding:11px 18px;background:rgba(255,255,255,.66);border-top:1px solid rgba(17,56,83,.09);font-size:.83rem;color:#385b72;min-height:43px}.status-dot{width:8px;height:8px;border-radius:50%;background:#9ab0c0;flex-shrink:0}.reaction-status.success .status-dot{background:var(--mint);box-shadow:0 0 0 4px rgba(55,214,176,.13)}.reaction-status.error .status-dot{background:#e77d64;box-shadow:0 0 0 4px rgba(231,125,100,.12)}.controls{display:grid;grid-template-columns:1fr 1fr;gap:12px}.control-card{background:white;border:1px solid var(--line);border-radius:17px;padding:17px}.control-card label{display:block;font-size:.78rem;font-weight:800;margin-bottom:7px;color:#40506d}.control-card select{width:100%;padding:11px 12px;border:1px solid #d9e3f0;border-radius:11px;background:#fbfdff;color:#20344f;outline:none}.control-card select:focus{border-color:#35bfd7;box-shadow:0 0 0 3px rgba(53,214,242,.13)}.control-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}.control-foot .note{font-size:.79rem;color:#b9c9df}.condition-box{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.condition-pill{border-radius:11px;padding:11px 12px;background:#f6f8fb;border:1px solid var(--line);font-size:.79rem}.condition-pill strong{display:block;font-size:.73rem;text-transform:uppercase;letter-spacing:.05em;color:#6a7890;margin-bottom:3px}.result-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}.result-card{background:white;color:var(--ink);border-radius:17px;padding:19px;border:1px solid var(--line);min-height:130px}.result-card h4{font-size:.9rem;margin:0 0 10px;display:flex;align-items:center;gap:8px}.result-card p{font-size:.86rem;color:var(--muted);margin:8px 0 0}.result-equation{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.9rem;padding:12px;background:#f3f7fc;border-radius:10px;overflow-wrap:anywhere;color:#193251}.lab-badge{display:inline-flex;background:#fff3dc;color:#8b5410;padding:5px 9px;border-radius:8px;font-size:.72rem;font-weight:800;margin-bottom:8px}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.gallery-card{background:white;border:1px solid var(--line);border-radius:19px;overflow:hidden}.gallery-art{height:150px;display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 50%,#e0f9fc,#edf1ff 70%)}.gallery-art:before{content:"";position:absolute;width:185px;height:100px;border:1px solid rgba(21,145,169,.22);border-radius:50%;transform:rotate(-25deg)}.gallery-emoji{position:relative;z-index:2;font-size:3.4rem;filter:drop-shadow(0 9px 9px rgba(31,70,95,.2))}.gallery-body{padding:18px}.gallery-body h3{margin:0 0 6px;font-size:1rem}.gallery-body p{font-size:.84rem;color:var(--muted);margin:0 0 13px}.quiz-shell{display:grid;grid-template-columns:270px 1fr;gap:22px;align-items:start}.quiz-side{background:#fff;border:1px solid var(--line);border-radius:20px;padding:23px;position:sticky;top:95px}.quiz-side h3{margin:0 0 4px}.quiz-side p{color:var(--muted);font-size:.86rem}.progress{height:8px;background:#eaf0f7;border-radius:99px;overflow:hidden;margin:19px 0 9px}.progress-bar{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--mint));transition:width .3s}.quiz-score{display:flex;justify-content:space-between;font-size:.82rem;color:var(--muted)}.quiz-main{background:white;border:1px solid var(--line);border-radius:22px;padding:clamp(20px,4vw,34px);min-height:360px}.quiz-kicker{display:flex;gap:8px;align-items:center;font-size:.78rem;color:#087d94;font-weight:850;text-transform:uppercase;letter-spacing:.07em}.quiz-main h3{font-size:clamp(1.25rem,2.6vw,1.75rem);line-height:1.35;margin:15px 0 22px}.answer-list{display:grid;gap:10px}.answer-option{display:flex;align-items:flex-start;gap:11px;text-align:left;padding:13px 15px;border:1px solid var(--line);background:#fff;border-radius:13px;color:var(--ink);transition:all .18s}.answer-option:hover:not(:disabled){border-color:#8bdfe9;background:#f5fdff}.answer-option .letter{display:grid;place-items:center;flex:0 0 28px;height:28px;border-radius:8px;background:#edf2f8;color:#52627b;font-size:.8rem;font-weight:900}.answer-option.correct{border-color:#64d2b1;background:#edfcf6}.answer-option.correct .letter{background:#37d6b0;color:#063e32}.answer-option.incorrect{border-color:#f2a08e;background:#fff5f2}.answer-option:disabled{cursor:default}.quiz-input{width:100%;padding:14px 15px;border:1px solid #d9e3f0;border-radius:12px;margin-bottom:12px;outline:none}.quiz-feedback{margin-top:17px;padding:13px 15px;border-radius:12px;font-size:.88rem;display:none}.quiz-feedback.show{display:block}.quiz-feedback.good{background:#edfcf6;color:#11674f;border:1px solid #c1f0dd}.quiz-feedback.bad{background:#fff5f2;color:#954d3c;border:1px solid #ffd8cf}.quiz-actions{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:20px}.quiz-result{display:none;text-align:center;padding:25px 10px}.quiz-result.show{display:block}.result-score{font-size:3.8rem;letter-spacing:-.06em;font-weight:900;color:#087d94;line-height:1.1}.quiz-result h3{font-size:1.6rem;margin:10px 0}.quiz-result p{color:var(--muted)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:center}.about-panel{padding:28px;border-radius:22px;background:white;border:1px solid var(--line)}.value-list{display:grid;gap:14px;margin-top:20px}.value-item{display:flex;gap:12px;align-items:flex-start}.value-item>span{width:32px;height:32px;flex:0 0 32px;display:grid;place-items:center;border-radius:10px;background:#e9fafe;color:#087d94}.value-item strong{display:block}.value-item small{color:var(--muted);font-size:.85rem}.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:25px}.contact-info{padding:28px;border-radius:22px;background:linear-gradient(145deg,#101b36,#1b3158);color:white}.contact-info p{color:#c4d2e9}.contact-info .value-item small{color:#c4d2e9}.contact-form{background:white;border:1px solid var(--line);border-radius:22px;padding:28px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:.82rem;font-weight:800}.field input,.field textarea,.field select{width:100%;border:1px solid #d9e3f0;border-radius:11px;padding:12px 13px;background:#fbfdff;outline:none}.field textarea{resize:vertical;min-height:118px}.field input:focus,.field textarea:focus,.field select:focus{border-color:#35bfd7;box-shadow:0 0 0 3px rgba(53,214,242,.12)}.form-msg{display:none;margin-top:13px;padding:12px;border-radius:10px;font-size:.85rem}.form-msg.show{display:block;background:#fff5e6;color:#84551c;border:1px solid #ffe1b5}.footer{background:#0c162d;color:#c0cbe0;padding:38px 0}.footer-row{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.footer p{margin:6px 0 0;font-size:.82rem;color:#8293b3}.footer-links{display:flex;gap:18px;flex-wrap:wrap;font-size:.83rem}.footer-links a:hover{color:var(--cyan)}.top-button{position:fixed;bottom:20px;right:20px;width:44px;height:44px;border:0;border-radius:14px;background:var(--cyan);color:#08243a;font-size:1.1rem;box-shadow:0 8px 22px rgba(16,27,54,.2);display:none;z-index:40}.top-button.show{display:block}.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:90;background:#101b36;color:#fff;padding:12px 18px;border-radius:12px;box-shadow:var(--shadow);transition:all .25s;font-size:.88rem;max-width:calc(100% - 30px)}.toast.show{opacity:1;transform:translate(-50%,0)}.reduced *{animation:none!important;scroll-behavior:auto!important;transition:none!important}.switch-row{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#5f7088}.switch-row input{accent-color:#087d94}.note-small{font-size:.77rem;color:var(--muted)}.divider{height:1px;background:var(--line);margin:18px 0}.hide{display:none!important}
+@media(max-width:950px){.navlinks{gap:12px}.navlinks a{font-size:.78rem}.hero-grid{grid-template-columns:1fr  .8fr;gap:20px}.lab-layout{grid-template-columns:285px 1fr}.card-grid,.gallery-grid{grid-template-columns:repeat(2,1fr)}.quiz-shell{grid-template-columns:230px 1fr}}
+@media(max-width:760px){.container{width:min(100% - 28px,600px)}.section{padding:64px 0}.nav{height:66px}.menu-toggle{display:block}.navlinks{display:none;position:absolute;top:66px;left:0;right:0;background:#101b36;padding:13px 20px 20px;flex-direction:column;align-items:stretch;border-bottom:1px solid rgba(255,255,255,.1)}.navlinks.open{display:flex}.navlinks a{padding:9px 0;font-size:.91rem}.nav-cta{display:none}.hero{padding:62px 0 60px}.hero-grid{grid-template-columns:1fr}.hero-copy{font-size:1rem}.lab-art{min-height:290px;margin-top:4px}.orbit.one{width:280px;height:280px}.orbit.two{width:220px;height:220px}.hero h1{font-size:clamp(3rem,14vw,5rem)}.stat-grid{grid-template-columns:1fr}.stat{padding:16px 20px}.stat+.stat{border-left:0;border-top:1px solid var(--line)}.card-grid,.gallery-grid,.pathway{grid-template-columns:1fr}.lab-layout,.quiz-shell,.about-grid,.contact-grid{grid-template-columns:1fr}.quiz-side{position:static}.controls{grid-template-columns:1fr}.control-foot{grid-column:auto}.result-grid{grid-template-columns:1fr}.condition-box{grid-template-columns:1fr 1fr}.sim-stage{min-height:290px}.shelf{gap:6px}.bottle{width:48px;height:75px}.bottle:before{left:12px}.bottle label{font-size:.53rem}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.contact-form,.contact-info{padding:21px}.section-head h2{font-size:2.2rem}}
+@media(max-width:390px){.condition-box{grid-template-columns:1fr}.sim-top{align-items:flex-start;flex-direction:column}.hero-actions .btn{width:100%}.art-label{right:0;bottom:0}.atom{transform:scale(.88)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* ===== NÂNG CẤP PHÒNG THÍ NGHIỆM 3D ===== */
+.simulation{isolation:isolate;box-shadow:0 22px 50px rgba(7,25,50,.14)}
+.sim-top{position:relative;z-index:8;background:linear-gradient(110deg,rgba(255,255,255,.84),rgba(240,249,255,.74))}
+.sim-top .tag{white-space:nowrap;box-shadow:0 5px 14px rgba(55,214,176,.14)}
+.sim-stage{min-height:430px;perspective:1150px;transform-style:preserve-3d;background:radial-gradient(ellipse at 48% 82%,rgba(63,157,190,.25),transparent 42%),linear-gradient(180deg,#e8f5fc 0%,#d8e9f2 58%,#cfdfeb 100%)}
+.lab-3d-backdrop{position:absolute;inset:0;overflow:hidden;pointer-events:none;transform-style:preserve-3d}
+.lab-3d-backdrop:before{content:"";position:absolute;left:5%;right:5%;top:18px;height:64%;border:1px solid rgba(77,125,154,.16);border-radius:14px;background:linear-gradient(145deg,rgba(255,255,255,.4),rgba(255,255,255,.04));box-shadow:inset 0 0 26px rgba(255,255,255,.3);transform:rotateY(-3deg) rotateX(2deg) translateZ(-45px)}
+.lab-3d-backdrop:after{content:"";position:absolute;left:-8%;right:-8%;bottom:-66px;height:190px;background:linear-gradient(rgba(91,135,163,.17) 1px,transparent 1px),linear-gradient(90deg,rgba(91,135,163,.17) 1px,transparent 1px),linear-gradient(180deg,rgba(255,255,255,.02),rgba(91,135,163,.08));background-size:31px 31px,31px 31px,100% 100%;transform:rotateX(59deg) translateZ(-18px);transform-origin:center bottom;mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 78%,transparent)}
+.shelf{top:27px;gap:13px;transform:translateX(-50%) rotateX(-4deg) translateZ(55px);transform-style:preserve-3d;z-index:6;filter:drop-shadow(0 12px 9px rgba(33,68,92,.13))}
+.bottle{width:67px;height:88px;border-radius:12px 12px 16px 16px;background:linear-gradient(100deg,rgba(255,255,255,.93) 0%,rgba(218,244,252,.5) 22%,rgba(255,255,255,.76) 45%,rgba(115,165,193,.33) 100%);box-shadow:inset 7px 0 9px rgba(255,255,255,.7),inset -6px 0 10px rgba(55,98,126,.13),0 8px 12px rgba(50,82,106,.12);transform:rotateY(-12deg) rotateX(2deg) translateZ(9px)}
+.bottle:before{background:linear-gradient(90deg,#657e99,#bdcbd8 45%,#6d8298);box-shadow:0 3px 5px rgba(34,59,83,.18)}
+.bottle:after{content:"";position:absolute;top:15px;left:7px;bottom:9px;width:7px;border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,.82),rgba(255,255,255,.12));pointer-events:none}
+.bottle label{font-size:.62rem;text-shadow:0 1px 0 rgba(255,255,255,.7);background:rgba(244,250,255,.57);padding:3px 0;border-radius:4px}
+.bottle.active{box-shadow:0 0 0 3px rgba(53,214,242,.45),0 0 24px rgba(53,214,242,.42),inset 7px 0 9px rgba(255,255,255,.7)}
+.bottle .liquid{box-shadow:inset 0 5px 7px rgba(255,255,255,.36);border-top:2px solid rgba(255,255,255,.5)}
+.bench{z-index:2;height:22px;bottom:31px;background:linear-gradient(180deg,#b9d0df 0%,#7f9fb5 38%,#5c7d98 100%);transform:rotateX(3deg) translateZ(5px);box-shadow:0 8px 0 #526f89,0 13px 24px rgba(40,71,96,.21),inset 0 2px 0 rgba(255,255,255,.6)}
+.bench:before{content:"";position:absolute;left:1%;right:1%;top:-7px;height:8px;border-radius:5px;background:linear-gradient(180deg,#e7f3fa,#8eacc1);box-shadow:0 0 0 1px rgba(74,115,142,.16)}
+.stand{z-index:3;transform:translateX(-50%) rotateY(-11deg) translateZ(28px);transform-style:preserve-3d;border-left:7px solid #9cb6c9;border-right:7px solid #6f8fa8;box-shadow:inset 7px 0 0 rgba(255,255,255,.14)}
+.stand:before{background:linear-gradient(180deg,#c0d5e3,#7897af);box-shadow:0 5px 7px rgba(53,83,105,.16)}
+.vessel{z-index:5;bottom:61px;width:126px;height:151px;filter:drop-shadow(10px 15px 11px rgba(31,68,92,.2));transform:translateX(-50%) rotateY(-11deg) rotateX(1deg) translateZ(65px);transform-style:preserve-3d}
+.vessel-neck{left:46px;width:34px;height:48px;border:3px solid rgba(75,133,162,.58);border-bottom:0;background:linear-gradient(90deg,rgba(255,255,255,.65),rgba(164,221,235,.12),rgba(255,255,255,.42));box-shadow:inset 4px 0 5px rgba(255,255,255,.5)}
+.vessel-neck:after{left:-5px;width:36px;height:8px;background:linear-gradient(180deg,#eafaff,#7eaac0);box-shadow:0 3px 4px rgba(49,90,115,.2)}
+.flask-body{top:39px;left:2px;width:122px;height:111px;border:3px solid rgba(70,128,157,.7);border-top:0;border-radius:20px 20px 49px 49px;background:linear-gradient(100deg,rgba(255,255,255,.7),rgba(177,225,239,.17) 28%,rgba(255,255,255,.25) 56%,rgba(96,157,184,.18));box-shadow:inset 8px 0 10px rgba(255,255,255,.42),inset -8px 0 10px rgba(50,115,143,.12),0 0 0 1px rgba(255,255,255,.22);overflow:hidden;transform:translateZ(3px)}
+.flask-body:before{height:5px;background:linear-gradient(90deg,rgba(75,131,158,.35),rgba(255,255,255,.82),rgba(76,130,157,.5));z-index:3}
+.flask-body:after{content:"";position:absolute;z-index:4;left:9px;top:13px;width:10px;height:68%;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,.8),rgba(255,255,255,.08));transform:rotate(4deg);pointer-events:none}
+.flask-liquid{height:48%;background:linear-gradient(90deg,rgba(77,179,204,.58),rgba(179,244,250,.64) 25%,rgba(77,179,204,.5) 72%,rgba(42,135,166,.52));border-radius:0 0 42px 42px;transition:height 5.1s cubic-bezier(.2,.6,.25,1),background 4.8s ease,filter 4.8s ease;box-shadow:inset 0 5px 9px rgba(255,255,255,.28)}
+.flask-liquid:before{content:"";position:absolute;left:-2%;right:-2%;top:-4px;height:9px;border-radius:50%;background:linear-gradient(90deg,rgba(255,255,255,.7),rgba(177,242,250,.6),rgba(255,255,255,.7));border-top:1px solid rgba(255,255,255,.85)}
+.flask-liquid.clear{height:28%;background:linear-gradient(90deg,rgba(135,220,233,.25),rgba(235,253,255,.42),rgba(110,199,220,.25))}
+.flask-liquid.mint{background:linear-gradient(90deg,rgba(55,214,176,.45),rgba(189,255,237,.6),rgba(37,171,142,.46))}
+/* Kết tủa được thể hiện thành pha trắng đục và lớp lắng liền mạch, không dùng chấm rời. */
+.flask-liquid.milky{height:79%;background:linear-gradient(90deg,#f7fbff 0%,#fff 18%,#f4f8fb 45%,#fff 74%,#eaf1f7 100%);filter:saturate(.15);box-shadow:inset 0 6px 11px rgba(255,255,255,.9),inset 0 -8px 12px rgba(209,224,235,.55)}
+.flask-liquid.milky:before{height:10px;top:-4px;background:linear-gradient(90deg,#eaf0f5,#fff 25%,#f0f5f8 65%,#fff);border-top:1px solid #fff}
+.precipitate{z-index:2;left:2px;right:2px;height:0;opacity:0;background:linear-gradient(180deg,#fff 0%,#fff 65%,#f4f7fa 100%);border-radius:0 0 39px 39px;box-shadow:inset 0 3px 5px rgba(255,255,255,.95),0 -2px 6px rgba(255,255,255,.5);transition:height 4.7s ease,opacity 1.2s ease;}
+.precipitate.on{height:27%;opacity:1;background:linear-gradient(180deg,#fff 0%,#fff 62%,#f5f8fb 100%);}
+.bubble{width:7px;height:7px;background:radial-gradient(circle at 30% 25%,#fff,rgba(108,214,235,.4));box-shadow:inset 1px 1px 2px #fff,0 0 4px rgba(255,255,255,.5)}
+.reaction-glow{z-index:1;width:205px;height:180px;bottom:60px;background:radial-gradient(ellipse,rgba(53,214,242,.31),rgba(53,214,242,.04) 55%,transparent 74%);filter:blur(3px)}
+.sim-label{z-index:10;box-shadow:0 5px 16px rgba(32,62,88,.08);font-size:.74rem}
+.stage-caption{z-index:10;bottom:9px;left:18px;right:18px;padding:5px 12px;border-radius:10px;background:rgba(248,253,255,.78);backdrop-filter:blur(7px);font-size:.8rem;color:#385b72;box-shadow:0 4px 12px rgba(41,78,101,.06)}
+.heat-source{position:absolute;z-index:4;left:calc(50% - 35px);bottom:40px;width:70px;display:none;text-align:center;color:#8b5d1e;filter:drop-shadow(0 0 8px rgba(255,174,67,.3));pointer-events:none}
+.heat-source.visible{display:block;animation:heaterPulse 1.8s ease-in-out infinite}
+.heat-flame{display:block;font-size:1.65rem;line-height:1;color:#ff9f43;text-shadow:0 0 8px rgba(255,146,50,.7),0 0 18px rgba(255,182,83,.55)}
+.heat-source small{display:block;margin-top:3px;font-size:.46rem;letter-spacing:.05em;font-weight:900;white-space:nowrap}
+@keyframes heaterPulse{50%{filter:brightness(1.2) drop-shadow(0 0 11px rgba(255,174,67,.55));transform:translateY(-2px)}}
+.molecular-scene{position:absolute;z-index:7;right:18px;top:125px;width:204px;padding:12px 10px 10px;border:1px solid rgba(255,255,255,.84);border-radius:17px;background:linear-gradient(145deg,rgba(255,255,255,.88),rgba(236,248,253,.73));box-shadow:0 15px 30px rgba(40,76,101,.16),inset 0 1px 0 #fff;backdrop-filter:blur(12px);transform:rotateY(-5deg) rotateX(2deg) translateZ(48px);transform-style:preserve-3d;transition:box-shadow .5s,border-color .5s}
+.molecular-scene:before{content:"";position:absolute;inset:5px;border-radius:12px;border:1px solid rgba(113,170,197,.12);pointer-events:none}
+.molecular-scene-head{display:flex;align-items:center;gap:6px;font-size:.54rem;letter-spacing:.07em;font-weight:900;color:#527087;white-space:nowrap}
+.molecular-led{width:6px;height:6px;flex:0 0 6px;border-radius:50%;background:#31bfa2;box-shadow:0 0 7px rgba(49,191,162,.6)}
+.molecular-flow{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 18px minmax(0,1fr);gap:2px;align-items:center;margin-top:10px}
+.mol-side{min-width:0;text-align:center;perspective:450px;transform-style:preserve-3d}
+.mol-side strong{display:block;font-size:.59rem;line-height:1.25;color:#203b56;margin-top:4px;overflow-wrap:anywhere}
+.mol-side small{display:block;font-size:.58rem;font-weight:800;color:#71869a;margin-top:1px}
+.mol-model{height:55px;position:relative;width:76px;max-width:100%;margin:auto;transform-style:preserve-3d;transform:rotateY(-16deg) rotateX(8deg)}
+.atom-sphere{position:absolute;z-index:2;width:23px;height:23px;border-radius:50%;display:grid;place-items:center;font-size:.52rem;font-weight:1000;color:#fff;border:1px solid rgba(255,255,255,.85);box-shadow:inset -4px -5px 6px rgba(0,0,0,.2),inset 2px 2px 4px rgba(255,255,255,.9),0 5px 8px rgba(30,58,82,.23);transform:translateZ(9px)}
+.atom-sphere.carbon{background:radial-gradient(circle at 28% 22%,#fff,#7c91a7 30%,#304962 82%)}
+.atom-sphere.nitrogen{background:radial-gradient(circle at 28% 22%,#fff,#53b7ec 32%,#1765a7 83%)}
+.atom-sphere.oxygen{background:radial-gradient(circle at 28% 22%,#fff,#ff8787 30%,#b32738 83%)}
+.atom-sphere.hydrogen{background:radial-gradient(circle at 28% 22%,#fff,#f7fafc 36%,#b7c8d5 88%);color:#38506a}
+.atom-sphere.bromine{background:radial-gradient(circle at 28% 22%,#fff,#bc926f 31%,#784122 84%)}
+.atom-bond{position:absolute;height:5px;border-radius:9px;z-index:1;background:linear-gradient(180deg,#e8eff5,#7c96aa 55%,#496a83);box-shadow:0 2px 3px rgba(33,57,78,.2);transform-origin:left center}
+.mol-model .a1{left:3px;top:17px}.mol-model .a2{left:27px;top:1px}.mol-model .a3{left:48px;top:20px}.mol-model .a4{left:27px;top:32px}.mol-model .a5{left:3px;top:39px}.mol-model .b1{left:20px;top:25px;width:16px;transform:rotate(-33deg)}.mol-model .b2{left:43px;top:18px;width:17px;transform:rotate(42deg)}.mol-model .b3{left:39px;top:29px;width:16px;transform:rotate(120deg)}.mol-model .b4{left:19px;top:37px;width:15px;transform:rotate(153deg)}
+.mol-arrow{display:grid;place-items:center;color:#1689a4;font-weight:1000;font-size:1.05rem;transition:transform .8s,color .8s}
+.molecular-note{position:relative;margin:8px 0 0;padding-top:7px;border-top:1px solid rgba(90,139,165,.16);font-size:.55rem;line-height:1.35;color:#5b7187;text-align:center}
+.molecular-scene.is-reacting{border-color:rgba(53,214,242,.95);box-shadow:0 0 0 3px rgba(53,214,242,.15),0 16px 33px rgba(40,76,101,.19),inset 0 1px 0 #fff}
+.molecular-scene.is-reacting .mol-arrow{transform:scale(1.3);color:#087d94}
+.molecular-scene.is-reacting .mol-model{animation:moleculeTilt 2.8s ease-in-out infinite alternate}
+.molecular-scene.is-complete .product-side .atom-sphere{filter:drop-shadow(0 0 5px rgba(55,214,176,.5))}
+@keyframes moleculeTilt{from{transform:rotateY(-16deg) rotateX(8deg) translateY(2px)}to{transform:rotateY(12deg) rotateX(-5deg) translateY(-3px)}}
+.simulation.run-reduction .vessel{animation:gentleVessel 3s ease-in-out infinite alternate}
+.simulation.run-alkylation .molecular-scene{animation:softFloat 2.8s ease-in-out infinite alternate}
+.simulation.run-bromination .flask-body{box-shadow:inset 8px 0 10px rgba(255,255,255,.42),inset -8px 0 10px rgba(50,115,143,.12),0 0 18px rgba(255,255,255,.8)}
+@keyframes gentleVessel{from{transform:translateX(-50%) rotateY(-11deg) rotateX(1deg) translateZ(65px)}to{transform:translateX(-50%) rotateY(-7deg) rotateX(0deg) translateZ(69px)}}
+@keyframes softFloat{to{transform:rotateY(-2deg) rotateX(0deg) translateZ(51px) translateY(-3px)}}
+.simulation-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding:12px 16px;background:linear-gradient(180deg,#edf7fb,#f8fcff);border-top:1px solid rgba(17,56,83,.08);border-bottom:1px solid rgba(17,56,83,.08)}
+.sim-step{position:relative;display:flex;align-items:center;justify-content:center;gap:7px;min-width:0;padding:9px 5px;border:1px solid #dce8f0;border-radius:11px;background:rgba(255,255,255,.7);color:#76889b;transition:all .45s}
+.sim-step span{display:grid;place-items:center;width:24px;height:24px;flex:0 0 24px;border-radius:8px;background:#e7eef4;color:#6d8295;font-size:.65rem;font-weight:900}
+.sim-step b{font-size:.68rem;white-space:nowrap}
+.sim-step.is-active{border-color:#7bd9e9;background:#e7fbff;color:#096f85;box-shadow:0 4px 12px rgba(53,214,242,.12)}
+.sim-step.is-active span,.sim-step.is-complete span{background:#18a4bd;color:#fff;box-shadow:0 3px 8px rgba(24,164,189,.2)}
+.sim-step.is-complete{border-color:#a6e6d2;background:#effcf7;color:#147b60}
+.sim-step.is-complete span{background:#37b996}
+.reaction-status{min-height:52px;padding:13px 18px;font-size:.87rem;background:#f7fbfe}
+@media(max-width:950px){.molecular-scene{right:10px;width:188px}.vessel{transform:translateX(-50%) rotateY(-11deg) rotateX(1deg) translateZ(55px)}}
+@media(max-width:760px){.sim-stage{min-height:415px}.shelf{top:24px;gap:5px;transform:translateX(-50%) rotateX(-3deg) translateZ(40px)}.bottle{width:49px;height:78px}.molecular-scene{left:9px;right:auto;top:126px;width:148px;padding:9px 6px 8px;transform:rotateY(3deg) rotateX(2deg) translateZ(35px)}.molecular-scene-head{font-size:.45rem;letter-spacing:.015em}.molecular-flow{grid-template-columns:minmax(0,1fr) 12px minmax(0,1fr);gap:0;margin-top:8px}.mol-model{width:52px;height:48px;transform:scale(.8) rotateY(-14deg);transform-origin:center}.mol-side strong{font-size:.52rem}.mol-side small{font-size:.51rem}.molecular-note{font-size:.49rem}.mol-arrow{font-size:.85rem}.vessel{left:60%;bottom:64px;transform:translateX(-50%) rotateY(-11deg) translateZ(48px) scale(.9)}.stand{left:60%;transform:translateX(-50%) rotateY(-11deg) translateZ(22px)}.bench{width:92%;left:4%;bottom:31px}.heat-source{left:calc(60% - 31px);bottom:40px}.stage-caption{left:9px;right:9px;bottom:7px;font-size:.68rem;padding:5px 6px}.sim-label{top:8px;right:8px;font-size:.6rem;padding:6px 7px;max-width:55%;text-align:center}.simulation-steps{gap:5px;padding:9px 8px}.sim-step{gap:4px;padding:7px 2px}.sim-step span{width:20px;height:20px;flex-basis:20px;font-size:.57rem}.sim-step b{font-size:.58rem}.reaction-status{font-size:.8rem}}
+@media(max-width:390px){.sim-stage{min-height:400px}.molecular-scene{width:145px;left:6px;top:126px}.molecular-scene-head{font-size:.42rem}.mol-model{transform:scale(.72) rotateY(-14deg)}.vessel{left:62%;transform:translateX(-50%) rotateY(-11deg) translateZ(40px) scale(.83)}.stand{left:62%}.heat-source{left:calc(62% - 31px)}.sim-step b{font-size:.52rem}.sim-step{flex-direction:column;gap:3px}.simulation-steps{padding:7px 5px}}
+@media(prefers-reduced-motion:reduce){.molecular-scene.is-reacting .mol-model,.simulation.run-reduction .vessel,.simulation.run-alkylation .molecular-scene,.heat-source.visible{animation:none!important}}
+
+
+/* === Giao diện xanh-trắng lấy cảm hứng từ bảng màu Azota === */
+:root{--navy:#2448b8;--navy2:#1c3995;--cyan:#2b54c7;--mint:#2f67d8;--violet:#6c62d9;--paper:#eef3f9;--ink:#17243a;--muted:#61718b;--amber:#ff8a24;--line:#dfe6f0;--white:#fff;--shadow:0 8px 28px rgba(25,48,99,.08);--radius:18px}
+html{font-size:18px;scroll-padding-top:96px}
+body{background:#eef3f9;color:#17243a;font-size:18px;line-height:1.62}.identity-open{overflow:hidden}
+small,.small,.note-small,.tag,.eyebrow{font-size:max(.8rem,14px)}
+.container{width:min(1250px,calc(100% - 44px))}
+.btn-primary{background:#2448b8;color:#fff;box-shadow:0 5px 12px rgba(36,72,184,.18)}
+.btn-primary:hover{background:#193b9e}
+.btn-dark{background:#2448b8;color:#fff}
+.btn-light{background:#edf2ff;color:#2348b8;border-color:#d7e0ff}
+.tag{background:#edf2ff;color:#2448b8}
+.tag.purple{background:#f0efff;color:#5d52b9}.tag.amber{background:#fff3e7;color:#a4500c}.tag.green{background:#e8f8ee;color:#187947}
+.eyebrow{color:#2448b8;letter-spacing:.08em}
+.topbar{margin-left:88px;background:#eef3f9;color:#17243a;border:0;backdrop-filter:none;position:sticky;top:0;height:82px;padding:0 18px;z-index:45}
+.nav{height:82px;width:100%;max-width:none;padding:0 8px;justify-content:space-between;gap:14px}
+.topbar .brand,.topbar .menu-toggle{display:none!important}
+.topbar .navlinks{display:none!important}
+.topbar .nav-cta{margin-left:auto}
+.topbar-profile{display:flex;align-items:center;gap:11px;margin-left:auto;min-width:0}
+.topbar-profile .btn{padding:9px 13px;border-radius:10px;font-size:.82rem;white-space:nowrap}
+.student-avatar{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border-radius:50%;background:#075a9f;color:white;font-weight:800;font-size:1.06rem;text-transform:uppercase}
+.student-meta{min-width:0;display:flex;flex-direction:column;line-height:1.25}
+.student-meta strong{font-size:.88rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:260px}
+.student-meta small{font-size:.73rem;color:#62718b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:360px}
+.app-sidebar{position:fixed;inset:0 auto 0 0;width:88px;z-index:60;background:#2448b8;color:#fff;display:flex;flex-direction:column;align-items:stretch;padding:12px 8px 10px;box-shadow:3px 0 12px rgba(16,40,115,.08)}
+.sidebar-logo{height:78px;display:flex;flex-direction:column;gap:1px;align-items:center;justify-content:center;color:white;font-weight:900;text-decoration:none;margin-bottom:14px;border-bottom:1px solid rgba(255,255,255,.13)}
+.sidebar-logo .logo-mark{font-size:2rem;line-height:1}
+.sidebar-logo small{font-size:10px;letter-spacing:.16em;color:#d9e4ff;font-weight:800}
+.sidebar-nav{display:flex;flex-direction:column;gap:8px;flex:1}
+.sidebar-link,.sidebar-setting{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:58px;padding:8px 3px;border-radius:18px;color:#e2eaff;text-decoration:none;font-size:10px;font-weight:700;line-height:1.12;text-align:center;transition:background .18s,color .18s,transform .18s}
+.sidebar-link .side-icon,.sidebar-setting .side-icon{font-size:1.35rem;line-height:1.1}
+.sidebar-link:hover,.sidebar-setting:hover{background:rgba(255,255,255,.14);color:#fff}
+.sidebar-link.active{background:#f5f8ff;color:#2448b8;box-shadow:0 5px 15px rgba(9,28,90,.12)}
+.sidebar-bottom{border-top:1px solid rgba(255,255,255,.16);padding-top:9px}
+.sidebar-setting{width:100%;border:0;background:transparent;font-family:inherit;cursor:pointer}
+main{margin-left:88px;min-height:calc(100vh - 82px);background:#eef3f9;padding:0 0 12px}
+.hero{margin:4px 22px 0;border-radius:25px;overflow:hidden;background:linear-gradient(122deg,#2145b4 0%,#2d56c5 53%,#4775dc 100%);min-height:420px;padding:46px 0 45px;box-shadow:0 12px 28px rgba(31,65,166,.13)}
+.hero:before{background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:38px 38px}
+.hero .eyebrow{color:#dce7ff}.hero h1 span{color:#dbe7ff}.hero-copy{color:#eef3ff}.hero-points{color:#e3ebff}.hero .btn-primary{background:#fff;color:#2448b8;box-shadow:none}.hero .btn-outline{border-color:rgba(255,255,255,.45);background:rgba(255,255,255,.08);color:#fff}
+.lab-art{min-height:330px}.orbit{border-color:rgba(255,255,255,.25)}.orbit:after{background:#fff;box-shadow:0 0 18px #bcd3ff}
+.stats{margin-top:18px}.stat-grid{border-radius:18px;box-shadow:0 5px 22px rgba(25,48,99,.06);border:1px solid #e3e9f2}.stat-icon{background:#edf2ff;color:#2448b8}.stat strong{font-size:1.04rem}
+.section{padding:56px 0}
+.section-head{margin-bottom:26px}.section-head h2{color:#1b2a43;font-size:clamp(1.8rem,3.5vw,2.7rem);letter-spacing:-.03em}.section-head p{color:#63718a;font-size:1rem}
+.dark-section{background:transparent!important;color:#17243a!important}.dark-section .section-head .eyebrow{color:#2448b8}.dark-section .section-head h2{color:#192742}.dark-section .section-head p{color:#62718b}
+.card,.panel,.result-card,.quiz-shell,.gallery-card,.about-panel,.contact-form,.path-card{background:#fff;border:1px solid #e2e8f2;box-shadow:0 5px 20px rgba(23,45,89,.045);border-radius:17px}
+.card{padding:23px}.card:hover{border-color:#c7d4fa;box-shadow:0 10px 28px rgba(34,67,157,.09)}
+.card h3,.panel-head h3,.sim-top h3,.quiz-main h3{color:#1b2a43}
+.card-icon{background:#edf2ff;color:#2448b8}.card-icon.violet{background:#f0efff;color:#6259c4}.card-icon.amber{background:#fff3e7;color:#a4500c}
+.equation{background:#f4f7fd;border:1px solid #e4eaf5;border-radius:12px;color:#1c367f;padding:12px;font-size:1.02rem}
+.pathway{gap:14px}.path-card{padding:18px}.path-num{background:#edf2ff;color:#2448b8;border-radius:13px}
+.lab-layout{gap:18px}.panel{overflow:hidden}.panel-head{background:#fff;border-bottom:1px solid #e7ecf4}.panel-head p,.panel-body p{color:#64738a}.exp-option{border-color:#e0e7f2;background:#fff;color:#1d2b45}.exp-option:hover,.exp-option.active{background:#edf2ff;border-color:#b9c9ff;color:#2448b8}.exp-icon{background:#edf2ff;color:#2448b8}.warning-box{background:#fff7ed;border-color:#ffdfbd;color:#75420f}
+.sim-top{background:#fff;color:#17243a}.sim-top h3{color:#17243a}.sim-top p{color:#66758d}.sim-stage{border:1px solid #d7e0ee;border-radius:0 0 16px 16px}.reaction-status{border-radius:0 0 15px 15px}.control-card{background:#fff;border:1px solid #e0e7f1;border-radius:12px}.control-card label{color:#263751}.control-card select,.field input,.field select,.field textarea,.quiz-input{border-color:#d9e2ef;border-radius:11px;background:#fff;color:#17243a}.control-card select:focus,.field input:focus,.field select:focus,.field textarea:focus,.quiz-input:focus{outline:3px solid rgba(36,72,184,.13);border-color:#6f8be2}.condition-box{background:#f5f7fc;border:1px solid #e2e8f2;border-radius:14px}.condition-pill{background:#fff}.result-card{padding:20px}.result-card h4{color:#21375f}
+.gallery-art{background:linear-gradient(135deg,#eff3ff,#f8faff)}.gallery-emoji{filter:none}.gallery-body{background:#fff}
+#quiz{background:transparent!important}.quiz-shell{overflow:hidden}.quiz-side{background:#2448b8;color:#fff}.quiz-side .tag{background:rgba(255,255,255,.15);color:white}.quiz-side p,.quiz-side .note-small{color:#e3eaff}.quiz-side .btn-light{background:white;color:#2448b8}.quiz-main{background:#fff}.quiz-kicker{color:#2448b8}.answer-option{background:#fff;border-color:#dfe6f1;color:#1a2942}.answer-option:hover{border-color:#96adef;background:#f5f7ff}.answer-option.correct{background:#e8f8ef;border-color:#76c999;color:#165b35}.answer-option.incorrect{background:#fff0f0;border-color:#e9a0a0;color:#922f2f}.quiz-feedback.good{background:#ecf9f1;border-color:#bee9ce;color:#17633b}.quiz-feedback.bad{background:#fff1f1;border-color:#f1cccc;color:#8f3131}.result-score{color:#2448b8}
+#contact{background:transparent!important}.contact-copy{background:#2448b8;color:#fff;border-radius:18px}.contact-copy p,.contact-copy small{color:#e3eaff}.contact-copy .tag{background:rgba(255,255,255,.16);color:#fff}.contact-form{padding:24px}.field label{font-weight:750;color:#28364c}.form-msg{color:#2348b8}
+.footer{margin-left:88px;background:#fff;border-top:1px solid #e2e8f2}.footer .brand{color:#21375f}.footer .brand small{color:#66758d}.footer p,.footer-links{color:#62718b}.brand-mark{background:#edf2ff;color:#2448b8;box-shadow:none}
+.top-button{background:#2448b8;color:#fff}.toast{background:#17243a}
+.identity-gate{position:fixed;z-index:2000;inset:0;display:flex;align-items:center;justify-content:center;padding:24px;background:#edf2f8;overflow:auto}
+.identity-gate[hidden]{display:none!important}
+.identity-gate:before{content:"";position:fixed;inset:0 0 auto 0;height:8px;background:#2448b8}
+.identity-gate:after{content:"";position:fixed;left:0;top:8px;bottom:0;width:88px;background:#2448b8}
+.identity-card{position:relative;z-index:1;width:min(560px,calc(100vw - 140px));background:#fff;border-radius:24px;padding:clamp(24px,4vw,42px);box-shadow:0 18px 60px rgba(22,42,89,.12);border:1px solid #e1e7f0}
+.identity-logo{display:flex;align-items:center;gap:12px;margin-bottom:22px;color:#2448b8;font-weight:900;letter-spacing:.03em}.identity-logo-mark{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:#2448b8;color:white;font-size:1.7rem}.identity-logo small{display:block;font-size:.72rem;letter-spacing:.12em;color:#6a7890;font-weight:700}
+.identity-eyebrow{font-size:.78rem!important;color:#2448b8;font-weight:850;letter-spacing:.11em;text-transform:uppercase}.identity-card h1{font-size:clamp(1.8rem,4vw,2.5rem);line-height:1.14;letter-spacing:-.035em;margin:10px 0 12px;color:#17243a}.identity-card h1 span{color:#2448b8}.identity-intro{color:#62718b;margin:0 0 24px;font-size:1rem}
+.identity-form{display:grid;gap:15px}.identity-field{display:grid;gap:7px}.identity-field label{font-size:.9rem;font-weight:800;color:#26364f}.identity-field input{width:100%;min-height:52px;padding:12px 14px;border:1px solid #dce4ef;border-radius:12px;color:#17243a;background:#fff}.identity-field input:focus{outline:3px solid rgba(36,72,184,.13);border-color:#6684dc}.identity-form .btn{width:100%;min-height:52px;margin-top:5px}.identity-privacy{font-size:.78rem;color:#748198;margin:18px 0 0}.identity-error{color:#a32929;font-size:.84rem;min-height:0}
+.sheet-status{margin:16px 0 0;padding:12px 14px;background:#f4f7fc;border:1px solid #e0e7f1;border-radius:12px;color:#52637d;font-size:.9rem}.sheet-status.ok{background:#edf9f1;border-color:#c5ead0;color:#176638}.sheet-status.warn{background:#fff7e9;border-color:#f6dfb8;color:#85540d}
+.quiz-result .result-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:18px}
+@media(max-width:950px){.app-sidebar{width:76px}.topbar,footer{margin-left:76px}main{margin-left:76px}.hero{margin-left:12px;margin-right:12px}.identity-gate:after{width:76px}.identity-card{width:min(560px,calc(100vw - 110px))}.sidebar-link,.sidebar-setting{font-size:9px}}
+@media(max-width:700px){
+ html{font-size:16px;scroll-padding-top:80px}
+ .app-sidebar{inset:auto 10px 10px 10px;width:auto;height:67px;padding:4px 5px;flex-direction:row;border-radius:17px;box-shadow:0 8px 25px rgba(17,38,107,.24)}
+ .sidebar-logo,.sidebar-bottom{display:none}.sidebar-nav{flex-direction:row;align-items:stretch;gap:2px;width:100%}.sidebar-link{flex:1;min-width:0;min-height:0;padding:7px 1px;border-radius:12px;font-size:9px;gap:3px}.sidebar-link .side-icon{font-size:1.16rem}.topbar{margin-left:0;height:72px;padding:0 13px}.nav{height:72px;padding:0}.student-avatar{width:36px;height:36px;flex-basis:36px}.student-meta strong{font-size:.8rem;max-width:40vw}.student-meta small{font-size:.66rem;max-width:42vw}.topbar-profile .btn{padding:8px 9px;font-size:.7rem}.topbar-profile{gap:7px}
+ main{margin-left:0;padding-bottom:82px}.footer{margin-left:0;padding-bottom:90px}.container{width:calc(100% - 26px)}.hero{margin:4px 9px 0;padding:34px 0 25px;min-height:0;border-radius:19px}.hero-grid{grid-template-columns:1fr;gap:10px}.hero h1{font-size:clamp(2.6rem,12vw,4.2rem)}.hero-copy{font-size:1rem}.lab-art{min-height:260px;transform:scale(.9)}.orbit.one{width:270px;height:270px}.orbit.two{width:220px;height:220px}.stats{margin-top:12px}.stat-grid{grid-template-columns:1fr}.stat{padding:13px 17px}.stat+.stat{border-left:0;border-top:1px solid var(--line)}.section{padding:42px 0}.section-head h2{font-size:1.8rem}.card-grid{grid-template-columns:1fr}.pathway{grid-template-columns:1fr}.lab-layout{grid-template-columns:1fr}.result-grid{grid-template-columns:1fr}.quiz-shell{grid-template-columns:1fr}.quiz-side{padding:22px}.quiz-main{padding:22px}.quiz-actions{align-items:stretch;flex-direction:column}.quiz-actions .btn{width:100%}.about-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.identity-gate{padding:18px 14px 90px;align-items:center}.identity-gate:after{display:none}.identity-card{width:min(560px,100%);padding:24px 20px;border-radius:19px}.identity-card h1{font-size:1.9rem}.footer-row{gap:20px;flex-direction:column}.sheet-status{font-size:.84rem}
+}
+@media(prefers-reduced-motion:reduce){.app-sidebar *,.identity-card *{scroll-behavior:auto!important;transition:none!important}}
+
+</style>
+</head>
+<body>
+<div class="identity-gate" id="identityGate" role="dialog" aria-modal="true" aria-labelledby="identityTitle">
+  <div class="identity-card">
+    <div class="identity-logo"><span class="identity-logo-mark">⚗</span><span>AMINE LAB<small>HỌC HÓA HỌC 12</small></span></div>
+    <div class="identity-eyebrow">BẮT ĐẦU BUỔI HỌC</div>
+    <h1 id="identityTitle">Chào mừng bạn đến với <span>AMINE LAB</span></h1>
+    <p class="identity-intro">Điền thông tin học sinh trước khi học. Khi hoàn thành bài luyện tập, thông tin này sẽ đi kèm kết quả nếu Google Sheets đã được kết nối.</p>
+    <form class="identity-form" id="identityForm" autocomplete="on">
+      <div class="identity-field"><label for="studentFullName">Họ và tên</label><input id="studentFullName" name="studentFullName" required maxlength="100" autocomplete="name" placeholder="Ví dụ: Nguyễn Minh Anh" /></div>
+      <div class="identity-field"><label for="studentClass">Lớp</label><input id="studentClass" name="studentClass" required maxlength="40" autocomplete="off" placeholder="Ví dụ: 12A1" /></div>
+      <div class="identity-field"><label for="studentSchool">Trường</label><input id="studentSchool" name="studentSchool" required maxlength="160" autocomplete="organization" placeholder="Nhập tên trường của bạn" /></div>
+      <div class="identity-error" id="identityError" aria-live="polite"></div>
+      <button class="btn btn-primary" type="submit">Vào học ngay <span aria-hidden="true">→</span></button>
+    </form>
+    <p class="identity-privacy">Thông tin chỉ dùng để nhận diện bài làm trong buổi học này. Kết quả chỉ được gửi ra Google Sheets khi giáo viên đã cấu hình liên kết.</p>
+  </div>
+</div>
+
+<aside class="app-sidebar" aria-label="Điều hướng AMINE LAB">
+  <a href="#home" class="sidebar-logo" aria-label="AMINE LAB - Trang chủ"><span class="logo-mark">⚗</span><small>AMINE LAB</small></a>
+  <nav class="sidebar-nav">
+    <a class="sidebar-link active" href="#home" title="Trang chủ"><span class="side-icon">⌂</span><span>Trang chủ</span></a>
+    <a class="sidebar-link" href="#project" title="Kiến thức"><span class="side-icon">▱</span><span>Kiến thức</span></a>
+    <a class="sidebar-link" href="#lab" title="Phòng thí nghiệm"><span class="side-icon">⚗</span><span>Thí nghiệm</span></a>
+    <a class="sidebar-link" href="#gallery" title="Thư viện"><span class="side-icon">▤</span><span>Thư viện</span></a>
+    <a class="sidebar-link" href="#quiz" title="Luyện tập"><span class="side-icon">✓</span><span>Luyện tập</span></a>
+    <a class="sidebar-link" href="#about" title="Giới thiệu"><span class="side-icon">ⓘ</span><span>Giới thiệu</span></a>
+    <a class="sidebar-link" href="#contact" title="Liên hệ"><span class="side-icon">✉</span><span>Liên hệ</span></a>
+  </nav>
+  <div class="sidebar-bottom"><button class="sidebar-setting" type="button" onclick="openIdentityGate(true)" title="Sửa thông tin học sinh"><span class="side-icon">⚙</span><span>Thông tin</span></button></div>
+</aside>
+<header class="topbar">
+  <div class="container nav">
+    <div style="font-size:.85rem;font-weight:800;color:#60708b">AMINE LAB <span style="color:#9aa7ba">/ Học tập</span></div>
+    <nav class="navlinks" id="navLinks" aria-hidden="true"></nav><button class="menu-toggle" id="menuToggle" style="display:none" aria-expanded="false">☰</button>
+    <div class="topbar-profile">
+      <button class="btn btn-primary nav-cta" type="button" onclick="openIdentityGate(true)">✎ Sửa thông tin</button>
+      <div class="student-avatar" id="studentAvatar">H</div>
+      <div class="student-meta"><strong id="studentNameTop">Học sinh</strong><small id="studentMetaTop">Lớp — · Trường —</small></div>
+    </div>
+  </div>
+</header>
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">HÓA HỌC 12 · KẾT NỐI TRI THỨC</span>
+      <h1>AMINE<br/><span>LAB.</span></h1>
+      <p class="hero-copy">Hiểu phản ứng. Khám phá phân tử. Làm chủ Hóa học. Học về amin qua sơ đồ trực quan, mô phỏng thí nghiệm và câu hỏi tương tác.</p>
+      <div class="hero-actions"><a class="btn btn-primary" href="#project">Bắt đầu khám phá <span>↗</span></a><a class="btn btn-outline" href="#lab">⚗ Vào phòng thí nghiệm</a></div>
+      <div class="hero-points"><span><i></i> Kiến thức cô đọng</span><span><i></i> Mô phỏng tương tác</span><span><i></i> 10 câu luyện tập</span></div>
+    </div>
+    <div class="lab-art" aria-label="Minh họa phân tử amin">
+      <div class="orbit one"></div><div class="orbit two"></div>
+      <div class="molecule"><div class="bond b1"></div><div class="bond b2"></div><div class="bond b3"></div><div class="bond b4"></div><div class="atom h1">H</div><div class="atom h2">H</div><div class="atom n">N</div><div class="atom c1">C</div><div class="atom c2">C</div></div>
+      <div class="art-label"><strong>Phân tử amin</strong>Nitrogen · Cặp electron tự do</div>
+    </div>
+  </div>
+</section>
+<div class="container stats"><div class="stat-grid"><div class="stat"><div class="stat-icon">◈</div><div><strong>03 mô phỏng</strong><span>Chọn phản ứng và quan sát</span></div></div><div class="stat"><div class="stat-icon">⌘</div><div><strong>Song ngữ hóa học</strong><span>Tên chất tiếng Anh + công thức</span></div></div><div class="stat"><div class="stat-icon">✓</div><div><strong>10 câu hỏi</strong><span>Trắc nghiệm · Đúng/Sai · Trả lời ngắn</span></div></div></div></div>
+
+<section class="section" id="project">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow">01 · KIẾN THỨC TRỌNG TÂM</span><h2>Khám phá tính chất hóa học của amin</h2><p>Nắm ý chính trước khi bước vào phòng thí nghiệm. Tên chất ưu tiên bằng tiếng Anh, kèm công thức và diễn giải tiếng Việt để dễ học.</p></div>
+  <div class="card-grid">
+   <article class="card"><div class="card-icon">⊕</div><span class="tag">Tính base</span><h3>Amin có tính base yếu</h3><p>Nguyên tử nitrogen có cặp electron tự do, có thể nhận proton (H⁺). Amin phản ứng với acid tạo muối ammonium tương ứng.</p><div class="equation">CH₃NH₂ + HCl → CH₃NH₃Cl</div><div class="chem-name">Methylamine + Hydrochloric acid → Methylammonium chloride</div></article>
+   <article class="card"><div class="card-icon violet">⇌</div><span class="tag purple">Phản ứng đặc trưng</span><h3>Amin bậc một với nitrous acid</h3><p>Alkylamine bậc một có thể tạo alcohol và giải phóng nitrogen (N₂) khi phản ứng với nitrous acid ở điều kiện phù hợp.</p><div class="equation">CH₃NH₂ + HNO₂ → CH₃OH + N₂↑ + H₂O</div><div class="chem-name">Methylamine + Nitrous acid → Methanol + Nitrogen + Water</div></article>
+   <article class="card"><div class="card-icon amber">✦</div><span class="tag amber">Nhận biết aniline</span><h3>Phản ứng với bromine water</h3><p>Aniline làm mất màu nước bromine và tạo kết tủa trắng 2,4,6-tribromoaniline.</p><div class="equation">C₆H₅NH₂ + 3Br₂ → C₆H₂Br₃NH₂↓ + 3HBr</div><div class="chem-name">Aniline + Bromine → 2,4,6-Tribromoaniline + Hydrogen bromide</div><button class="inline-link" onclick="selectExperiment('bromination')">Khám phá mô phỏng ↗</button></article>
+  </div>
+  <div style="height:28px"></div>
+  <div class="section-head" style="margin-bottom:20px"><span class="eyebrow">LỘ TRÌNH HỌC</span><h2 style="font-size:1.7rem">Học theo 3 bước</h2></div>
+  <div class="pathway"><div class="path-card"><div class="path-num">01</div><div><h3>Hiểu lý thuyết</h3><p>Nhận biết nhóm chức, tính base và phản ứng tiêu biểu.</p></div></div><div class="path-card"><div class="path-num">02</div><div><h3>Thử trong phòng lab</h3><p>Chọn chất, điều kiện và theo dõi mô phỏng theo từng giai đoạn.</p></div></div><div class="path-card"><div class="path-num">03</div><div><h3>Tự kiểm tra</h3><p>Làm 10 câu hỏi, xem lời giải và thử lại để củng cố kiến thức.</p></div></div></div>
+ </div>
+</section>
+
+<section class="section dark-section" id="lab">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow">02 · VIRTUAL LAB</span><h2>Phòng thí nghiệm ảo</h2><p>Chọn một mô phỏng, chọn chất phản ứng và điều kiện tương ứng, rồi nhấn “Tiến hành phản ứng”. Hoạt ảnh là mô hình khái niệm, không phải hướng dẫn thí nghiệm thật.</p></div>
+  <div class="lab-layout">
+   <aside class="panel">
+    <div class="panel-head"><h3>Chọn mô phỏng</h3><p>Chọn phản ứng để mở đúng bộ chất tương ứng.</p></div>
+    <div class="panel-body"><div class="exp-list">
+     <button class="exp-option active" data-exp="reduction" onclick="selectExperiment('reduction')"><span class="exp-icon">⚗</span><span><strong>Điều chế aniline</strong><small>Khử nitrobenzene · Hệ Fe/HCl</small></span></button>
+     <button class="exp-option" data-exp="alkylation" onclick="selectExperiment('alkylation')"><span class="exp-icon">＋</span><span><strong>Alkyl hóa ammonia</strong><small>Mô hình tạo alkylamine</small></span></button>
+     <button class="exp-option" data-exp="bromination" onclick="selectExperiment('bromination')"><span class="exp-icon">◉</span><span><strong>Nhận biết aniline</strong><small>Aniline + Bromine water</small></span></button>
+    </div><div class="warning-box"><strong>⚠ Chỉ là mô phỏng số.</strong><br/>Không thực hiện các phản ứng này ngoài đời dựa trên website. Một số hóa chất thuộc loại độc hại hoặc ăn mòn và cần quy trình an toàn chuyên nghiệp.</div></div>
+   </aside>
+   <div class="lab-main">
+    <div class="simulation" id="simulation">
+     <div class="sim-top"><div><h3 id="simTitle">Điều chế aniline từ nitrobenzene</h3><p id="simSubtitle">Mô phỏng chuyển hóa nhóm nitro thành nhóm amino.</p></div><span class="tag green">Không gian 3D mô phỏng</span></div>
+     <div class="sim-stage" id="simStage">
+      <div class="lab-3d-backdrop" aria-hidden="true"></div>
+      <div class="shelf" id="bottleShelf"><button class="bottle brown" title="Nitrobenzene" onclick="chooseFromBottle('a')"><div class="liquid"></div><label>C₆H₅NO₂</label></button><button class="bottle" title="Fe/HCl" onclick="chooseFromBottle('b')"><div class="liquid"></div><label>Fe/HCl</label></button><button class="bottle purple" title="Chất mô phỏng" onclick="chooseFromBottle('b')"><div class="liquid"></div><label>REAGENT</label></button></div>
+      <div class="reaction-glow"></div>
+      <div class="stand"></div>
+      <div class="heat-source" id="heatSource" aria-hidden="true"><span class="heat-flame">♨</span><small>GIA NHIỆT · MINH HỌA</small></div>
+      <div class="vessel" id="vessel"><div class="vessel-neck"></div><div class="flask-body"><div class="flask-liquid" id="flaskLiquid"></div><div class="precipitate" id="precipitate"></div><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span></div><div class="flask-reflection" aria-hidden="true"></div></div>
+      <div class="molecular-scene" id="molecularScene" aria-live="polite">
+       <div class="molecular-scene-head"><span class="molecular-led"></span><span>MÔ HÌNH PHÂN TỬ 3D</span></div>
+       <div class="molecular-flow">
+        <div class="mol-side">
+         <div class="mol-model" id="molModelFrom" aria-hidden="true"></div>
+         <strong id="molNameFrom">Nitrobenzene</strong><small id="molFormulaFrom">C₆H₅NO₂</small>
+        </div>
+        <span class="mol-arrow" id="molArrow" aria-hidden="true">→</span>
+        <div class="mol-side product-side">
+         <div class="mol-model" id="molModelTo" aria-hidden="true"></div>
+         <strong id="molNameTo">Aniline</strong><small id="molFormulaTo">C₆H₅NH₂</small>
+        </div>
+       </div>
+       <p class="molecular-note" id="molecularNote">Mô hình nhóm chức minh họa, không theo tỉ lệ kích thước thực.</p>
+      </div>
+      <div class="bench"></div>
+      <div class="sim-label" id="simLabel">TRẠNG THÁI: CHỜ THAO TÁC</div>
+      <div class="stage-caption" id="stageCaption">Chọn hai chất phù hợp để bắt đầu mô phỏng.</div>
+     </div>
+     <div class="simulation-steps" id="simulationSteps" aria-label="Tiến trình mô phỏng">
+      <div class="sim-step is-active" data-step="1"><span>01</span><b>Chuẩn bị</b></div>
+      <div class="sim-step" data-step="2"><span>02</span><b>Tiếp cận</b></div>
+      <div class="sim-step" data-step="3"><span>03</span><b>Biến đổi</b></div>
+      <div class="sim-step" data-step="4"><span>04</span><b>Kết quả</b></div>
+     </div>
+     <div class="reaction-status" id="reactionStatus" role="status"><span class="status-dot"></span><span id="statusText">Đang chờ lựa chọn chất phản ứng.</span></div>
+    </div>
+    <div class="panel">
+     <div class="panel-head"><h3>Thiết lập phản ứng</h3><p>Chọn đúng chất ban đầu và chất/tác nhân liên quan. Hệ thống chỉ chạy những tổ hợp đã khai báo.</p></div>
+     <div class="panel-body">
+      <div class="controls">
+       <div class="control-card"><label for="reactantA">Chất ban đầu / Reactant A</label><select id="reactantA" onchange="clearLabResult()"></select></div>
+       <div class="control-card"><label for="reactantB">Chất phản ứng / Reagent B</label><select id="reactantB" onchange="clearLabResult()"></select></div>
+       <div class="control-card"><label for="condition">Điều kiện phản ứng</label><select id="condition" onchange="clearLabResult()"></select></div>
+       <div class="control-card"><label for="catalyst">Chất xúc tác / vai trò bổ sung</label><select id="catalyst" onchange="clearLabResult()"></select></div>
+       <div class="control-foot"><div class="switch-row"><input type="checkbox" id="motionToggle" checked /><label for="motionToggle">Bật hoạt ảnh</label></div><div style="display:flex;gap:9px;flex-wrap:wrap"><button class="btn btn-dark" onclick="resetLab()">↺ Đặt lại</button><button class="btn btn-primary" id="runBtn" onclick="runReaction()">Tiến hành phản ứng ↗</button></div></div>
+      </div>
+      <div class="condition-box"><div class="condition-pill"><strong>Nhiệt độ</strong><span id="temperatureInfo">Điều kiện gia nhiệt được minh họa định tính.</span></div><div class="condition-pill"><strong>Xúc tác / tác nhân</strong><span id="catalystInfo">Fe/HCl là hệ khử trong mô hình.</span></div></div>
+      <p class="note-small" style="margin:13px 0 0">Ghi nhớ: tác nhân khử, chất xúc tác, dung môi và điều kiện nhiệt độ là các khái niệm khác nhau; không phải phản ứng nào cũng cần chất xúc tác.</p>
+     </div>
+    </div>
+    <div class="result-grid"><article class="result-card"><h4>∑ Phương trình phản ứng</h4><span class="lab-badge">Chỉ hiện sau khi chạy đúng mô hình</span><div class="result-equation" id="equationResult">Phương trình sẽ xuất hiện tại đây.</div><p id="equationNames">Tên chất bằng tiếng Anh sẽ hiển thị kèm theo phương trình.</p></article><article class="result-card"><h4>◉ Hiện tượng & kết luận</h4><p id="observationResult">Theo dõi trạng thái bình phản ứng để quan sát hiệu ứng tương ứng.</p><div class="divider"></div><p id="safetyResult">Mô phỏng khái niệm, không thay thế thí nghiệm có giám sát.</p></article></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="gallery">
+ <div class="container"><div class="section-head"><span class="eyebrow">03 · THƯ VIỆN</span><h2>Thẻ ghi nhớ phản ứng</h2><p>Ôn nhanh tên chất tiếng Anh, công thức và hiện tượng thường gặp. Chọn thẻ để mở mô phỏng liên quan.</p></div>
+  <div class="gallery-grid">
+   <article class="gallery-card"><div class="gallery-art"><div class="gallery-emoji">🧬</div></div><div class="gallery-body"><span class="tag">Cấu tạo</span><h3>Methylamine · CH₃NH₂</h3><p>Amin bậc một, có cặp electron tự do trên nitrogen và thể hiện tính base yếu.</p><button class="inline-link" onclick="selectExperiment('alkylation')">Khám phá ↗</button></div></article>
+   <article class="gallery-card"><div class="gallery-art"><div class="gallery-emoji">⚗️</div></div><div class="gallery-body"><span class="tag purple">Điều chế</span><h3>Aniline · C₆H₅NH₂</h3><p>Có thể được điều chế bằng cách khử nitrobenzene trong hệ kim loại/acid phù hợp.</p><button class="inline-link" onclick="selectExperiment('reduction')">Khám phá ↗</button></div></article>
+   <article class="gallery-card"><div class="gallery-art"><div class="gallery-emoji">❄️</div></div><div class="gallery-body"><span class="tag amber">Nhận biết</span><h3>Bromine water · Br₂(aq)</h3><p>Với aniline, tạo kết tủa trắng 2,4,6-tribromoaniline và làm mất màu bromine water.</p><button class="inline-link" onclick="selectExperiment('bromination')">Khám phá ↗</button></div></article>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="quiz" style="background:#edf2f8">
+ <div class="container"><div class="section-head"><span class="eyebrow">04 · KIỂM TRA KIẾN THỨC</span><h2>Thử thách 10 câu</h2><p>Có đủ trắc nghiệm, đúng–sai và trả lời ngắn. Mỗi câu đều có phản hồi giải thích để bạn hiểu vì sao đáp án đúng.</p></div>
+  <div class="quiz-shell">
+   <aside class="quiz-side"><span class="tag purple">AMINE CHALLENGE</span><h3 style="margin-top:14px">Bạn nhớ được bao nhiêu?</h3><p>Trả lời lần lượt 10 câu để kiểm tra kiến thức vừa học.</p><div class="progress"><div class="progress-bar" id="progressBar"></div></div><div class="quiz-score"><span id="progressText">Câu 1 / 10</span><strong id="scoreText">Điểm: 0</strong></div><div class="divider"></div><p class="note-small">Mẹo: chú ý loại amin và điều kiện phản ứng. Không áp dụng một phương trình cho tất cả các amin.</p><button class="btn btn-light" style="width:100%" onclick="restartQuiz()">↺ Làm lại từ đầu</button></aside>
+   <div class="quiz-main" id="quizMain">
+    <div id="quizQuestionArea"><div class="quiz-kicker"><span id="questionType">TRẮC NGHIỆM</span><span>·</span><span id="questionNumber">CÂU 01</span></div><h3 id="questionText">Trong phân tử amin, nguyên tử nitrogen có đặc điểm nào giải thích tính base?</h3><div class="answer-list" id="answerList"></div><div class="quiz-feedback" id="quizFeedback" role="status"></div><div class="quiz-actions"><span class="note-small" id="answerHint">Chọn một đáp án.</span><button class="btn btn-dark" id="nextQuestion" onclick="nextQuizQuestion()" disabled>Câu tiếp theo →</button></div></div>
+    <div class="quiz-result" id="quizResult"><div style="font-size:3rem">🏁</div><div class="result-score" id="finalScore">0/10</div><h3 id="finalTitle">Hoàn thành!</h3><p id="finalNote">Xem lại các giải thích rồi thử lại nhé.</p><div class="result-buttons"><button class="btn btn-primary" onclick="restartQuiz()">Làm lại bài kiểm tra ↻</button><button class="btn btn-light" onclick="downloadQuizResult()">Tải kết quả CSV ↓</button></div><div class="sheet-status warn" id="sheetStatus" role="status">Đang kiểm tra cấu hình lưu kết quả…</div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="about">
+ <div class="container"><div class="about-grid"><div><span class="eyebrow">05 · VỀ AMINE LAB</span><h2 style="font-size:clamp(2.1rem,4vw,3.2rem);line-height:1.12;letter-spacing:-.04em;margin:13px 0">Hóa học dễ hiểu hơn khi được khám phá.</h2><p class="muted">AMINE LAB là website học tập minh họa kiến thức về amin trong Hóa học 12. Trang kết hợp lý thuyết ngắn gọn, tên chất tiếng Anh, mô phỏng khái niệm và câu hỏi tự đánh giá.</p><p class="muted">Các hiệu ứng chỉ nhằm diễn giải ý tưởng hóa học; không biểu diễn chính xác động học, màu sắc thực nghiệm trong mọi điều kiện hoặc quy trình phòng thí nghiệm.</p><a class="btn btn-dark" href="#project">Xem nội dung học tập ↗</a></div><div class="about-panel"><span class="tag green">NGUYÊN TẮC THIẾT KẾ</span><div class="value-list"><div class="value-item"><span>✓</span><div><strong>Chính xác và có giới hạn</strong><small>Chỉ chạy các phản ứng đã được khai báo; phân biệt điều chế và nhận biết.</small></div></div><div class="value-item"><span>◈</span><div><strong>Trực quan, dễ theo dõi</strong><small>Chia quá trình mô phỏng thành từng giai đoạn thay vì chỉ hiện kết quả.</small></div></div><div class="value-item"><span>EN</span><div><strong>Thuật ngữ song ngữ</strong><small>Tên hóa chất tiếng Anh đi kèm công thức và lời giải thích tiếng Việt.</small></div></div><div class="value-item"><span>⚑</span><div><strong>An toàn học tập</strong><small>Đây là phòng thí nghiệm ảo; không thay thế hướng dẫn của giáo viên.</small></div></div></div></div></div></div>
+</section>
+
+<section class="section" id="contact" style="background:#edf2f8">
+ <div class="container"><div class="section-head"><span class="eyebrow">06 · KẾT NỐI</span><h2>Gửi góp ý cho AMINE LAB</h2><p>Bạn có thể nhập phản hồi mẫu ngay trên trang. Phiên bản HTML này chưa kết nối máy chủ nên không gửi email hoặc lưu dữ liệu thật.</p></div><div class="contact-grid"><div class="contact-info"><span class="tag" style="background:rgba(53,214,242,.13);color:#7ce8f7">CÙNG HỌC HÓA</span><h3 style="font-size:1.7rem;line-height:1.2;margin:18px 0 10px">Một phản hồi nhỏ giúp bài học tốt hơn.</h3><p>Hãy báo lỗi kiến thức, đề xuất tính năng hoặc góp ý giao diện để nhóm thực hiện có thể hoàn thiện sản phẩm.</p><div class="value-list"><div class="value-item"><span>✉</span><div><strong>Phản hồi nội dung</strong><small>Phương trình, thuật ngữ, lời giải.</small></div></div><div class="value-item"><span>✦</span><div><strong>Đề xuất tính năng</strong><small>Ý tưởng tương tác cho lớp học.</small></div></div></div></div><form class="contact-form" id="contactForm"><div class="form-grid"><div class="field"><label for="contactName">Họ tên</label><input id="contactName" name="name" required placeholder="Tên của bạn" /></div><div class="field"><label for="contactEmail">Email (tùy chọn)</label><input id="contactEmail" name="email" type="email" placeholder="ban@example.com" /></div><div class="field full"><label for="contactTopic">Chủ đề góp ý</label><select id="contactTopic"><option>Góp ý nội dung</option><option>Báo lỗi kiến thức</option><option>Lỗi giao diện</option><option>Đề xuất tính năng</option></select></div><div class="field full"><label for="contactMessage">Nội dung</label><textarea id="contactMessage" required placeholder="Bạn muốn góp ý điều gì?..."></textarea></div><div class="field full"><button class="btn btn-primary" type="submit">Xem xác nhận demo ↗</button><div class="form-msg" id="formMessage" role="status"></div></div></div></form></div></div>
+</section>
+</main>
+<footer class="footer"><div class="container footer-row"><div><a class="brand" href="#home"><span class="brand-mark">⚗</span><span>AMINE LAB<small>KHÁM PHÁ THẾ GIỚI AMIN</small></span></a><p>Học hóa học bằng khám phá · Bản demo chạy trực tiếp trên trình duyệt.</p></div><div class="footer-links"><a href="#project">Kiến thức</a><a href="#lab">Phòng thí nghiệm</a><a href="#quiz">Luyện tập</a><a href="#about">Giới thiệu</a></div><p>© <span id="year"></span> AMINE LAB</p></div></footer>
+<button class="top-button" id="topButton" aria-label="Lên đầu trang" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button><div class="toast" id="toast" role="status"></div>
+<script>
+const EXPERIMENTS = {
+ reduction:{title:'Điều chế aniline từ nitrobenzene',subtitle:'Mô phỏng chuyển hóa nhóm nitro thành nhóm amino.',a:[['','— Chọn chất ban đầu —'],['nitrobenzene','Nitrobenzene · C₆H₅NO₂'],['aniline','Aniline · C₆H₅NH₂'],['methylamine','Methylamine · CH₃NH₂'],['ammonia','Ammonia · NH₃']],b:[['','— Chọn tác nhân —'],['fehcl','Iron / Hydrochloric acid · Fe/HCl'],['bromine','Bromine water · Br₂(aq)'],['hcl','Hydrochloric acid · HCl'],['nitrous','Nitrous acid · HNO₂']],conditions:[['','— Chọn điều kiện —'],['heat','Gia nhiệt theo mô hình khái niệm'],['room','Điều kiện thường']],catalysts:[['','— Chọn vai trò —'],['reducing','Hệ Fe/HCl đóng vai trò tác nhân khử'],['none','Không thêm tác nhân/chất xúc tác']],expected:{a:'nitrobenzene',b:'fehcl',condition:'heat',catalyst:'reducing'},equation:'C₆H₅NO₂ + 6[H] → C₆H₅NH₂ + 2H₂O',names:'Nitrobenzene → Aniline (phenylamine) + Water. [H] là ký hiệu quy ước cho tác nhân khử.',observation:'Mô phỏng cho thấy nhãn chất ban đầu chuyển sang sản phẩm aniline. Không gán màu dung dịch hoặc kết tủa cụ thể vì hiện tượng thực tế phụ thuộc điều kiện và bước xử lý.',temp:'Gia nhiệt được minh họa định tính; không hiển thị thông số thực nghiệm.',catalystInfo:'Fe/HCl là hệ khử trong mô hình, không được gọi đơn giản là chất xúc tác.',caption:'Mô hình nhóm –NO₂ chuyển thành nhóm –NH₂; theo dõi sự thay đổi ở sơ đồ phân tử.',liquid:'clear',bubbles:false,precipitate:false,category:'prep'},
+ alkylation:{title:'Alkyl hóa ammonia',subtitle:'Mô hình tạo alkylamine; sản phẩm phụ thuộc điều kiện và mức độ alkyl hóa.',a:[['','— Chọn chất ban đầu —'],['ammonia','Ammonia · NH₃'],['nitrobenzene','Nitrobenzene · C₆H₅NO₂'],['aniline','Aniline · C₆H₅NH₂']],b:[['','— Chọn dẫn xuất halogen —'],['bromomethane','Bromomethane · CH₃Br (mô hình)'],['bromine','Bromine water · Br₂(aq)'],['fehcl','Iron / Hydrochloric acid · Fe/HCl']],conditions:[['','— Chọn điều kiện —'],['excess','Ammonia dư / điều kiện alkyl hóa phù hợp'],['room','Điều kiện thường (chưa xác nhận mô hình)']],catalysts:[['','— Chọn vai trò —'],['none','Không yêu cầu chất xúc tác riêng trong sơ đồ'],['reducing','Hệ Fe/HCl (không phù hợp)']],expected:{a:'ammonia',b:'bromomethane',condition:'excess',catalyst:'none'},equation:'CH₃Br + 2NH₃ → CH₃NH₂ + NH₄Br',names:'Bromomethane + Ammonia → Methylamine + Ammonium bromide. Đây là phương trình đại diện; alkyl hóa tiếp có thể tạo hỗn hợp sản phẩm.',observation:'Sơ đồ cho thấy hình thành methylamine cùng muối ammonium bromide. Trong phản ứng thực tế, sản phẩm có thể tiếp tục bị alkyl hóa nên không mặc định chỉ thu được amin bậc một.',temp:'Mô hình không đặt thông số nhiệt độ; điều kiện thực tế tùy phản ứng cụ thể.',catalystInfo:'Không yêu cầu chất xúc tác riêng trong sơ đồ đại diện; ammonia là chất phản ứng và điều kiện dư được nêu riêng.',caption:'Mô hình minh họa nhóm methyl liên kết với nitrogen; chú ý khả năng alkyl hóa tiếp.',liquid:'clear',bubbles:false,precipitate:false,category:'prep'},
+ bromination:{title:'Aniline phản ứng với bromine water',subtitle:'Phản ứng nhận biết aniline qua sự mất màu và kết tủa trắng.',a:[['','— Chọn chất ban đầu —'],['aniline','Aniline · C₆H₅NH₂'],['nitrobenzene','Nitrobenzene · C₆H₅NO₂'],['methylamine','Methylamine · CH₃NH₂']],b:[['','— Chọn thuốc thử —'],['bromine','Bromine water · Br₂(aq)'],['hcl','Hydrochloric acid · HCl'],['fehcl','Iron / Hydrochloric acid · Fe/HCl']],conditions:[['','— Chọn điều kiện —'],['aqueous','Dung dịch nước / điều kiện thường'],['heat','Gia nhiệt theo mô hình khái niệm']],catalysts:[['','— Chọn vai trò —'],['none','Không cần chất xúc tác riêng'],['reducing','Hệ Fe/HCl (không phù hợp)']],expected:{a:'aniline',b:'bromine',condition:'aqueous',catalyst:'none'},equation:'C₆H₅NH₂ + 3Br₂ → C₆H₂Br₃NH₂↓ + 3HBr',names:'Aniline + Bromine → 2,4,6-Tribromoaniline (white precipitate) + Hydrogen bromide.',observation:'Màu nâu vàng của Bromine water nhạt dần rồi mất màu; pha lỏng chuyển đục trắng rõ rệt và tạo lớp kết tủa trắng 2,4,6-tribromoaniline lắng xuống đáy. Màu trắng là hiệu ứng mô phỏng định tính.',temp:'Mô hình minh họa trong dung dịch nước, không cần gia nhiệt.',catalystInfo:'Không yêu cầu chất xúc tác riêng trong phản ứng nhận biết này.',caption:'Bromine water mất màu; pha lỏng chuyển đục trắng và lớp kết tủa trắng xuất hiện rõ ở đáy bình.',liquid:'milky',bubbles:false,precipitate:true,category:'test'}
+};
+const MOLECULAR_VISUALS = {
+ reduction:{from:'Nitrobenzene',fromFormula:'C₆H₅NO₂',to:'Aniline',toFormula:'C₆H₅NH₂',note:'Nhóm nitro (–NO₂) được chuyển thành nhóm amino (–NH₂). Mô hình nhóm chức, không theo tỉ lệ.',fromAtoms:'<span class="atom-sphere carbon a1">C</span><i class="atom-bond b1"></i><span class="atom-sphere nitrogen a2">N</span><i class="atom-bond b2"></i><span class="atom-sphere oxygen a3">O</span><i class="atom-bond b3"></i><span class="atom-sphere oxygen a4">O</span>',toAtoms:'<span class="atom-sphere carbon a1">C</span><i class="atom-bond b1"></i><span class="atom-sphere nitrogen a2">N</span><i class="atom-bond b2"></i><span class="atom-sphere hydrogen a3">H</span><i class="atom-bond b3"></i><span class="atom-sphere hydrogen a4">H</span>'},
+ alkylation:{from:'Ammonia + Bromomethane',fromFormula:'NH₃ + CH₃Br',to:'Methylamine',toFormula:'CH₃NH₂',note:'Nhóm methyl (–CH₃) được minh họa gắn với nitrogen. Phản ứng thực tế có thể tiếp tục tạo sản phẩm alkyl hóa cao hơn.',fromAtoms:'<span class="atom-sphere nitrogen a2">N</span><i class="atom-bond b1"></i><span class="atom-sphere hydrogen a1">H</span><i class="atom-bond b2"></i><span class="atom-sphere hydrogen a3">H</span><i class="atom-bond b3"></i><span class="atom-sphere bromine a4">Br</span>',toAtoms:'<span class="atom-sphere carbon a1">C</span><i class="atom-bond b1"></i><span class="atom-sphere nitrogen a2">N</span><i class="atom-bond b2"></i><span class="atom-sphere hydrogen a3">H</span><i class="atom-bond b3"></i><span class="atom-sphere hydrogen a4">H</span>'},
+ bromination:{from:'Aniline + Bromine',fromFormula:'C₆H₅NH₂ + Br₂',to:'2,4,6-Tribromoaniline',toFormula:'C₆H₂Br₃NH₂',note:'Ba nguyên tử bromine được minh họa thế vào vòng thơm; kết tủa trắng là hiện tượng đặc trưng trong mô hình.',fromAtoms:'<span class="atom-sphere carbon a1">C</span><i class="atom-bond b1"></i><span class="atom-sphere nitrogen a2">N</span><i class="atom-bond b2"></i><span class="atom-sphere bromine a3">Br</span><i class="atom-bond b3"></i><span class="atom-sphere bromine a4">Br</span>',toAtoms:'<span class="atom-sphere carbon a1">C</span><i class="atom-bond b1"></i><span class="atom-sphere nitrogen a2">N</span><i class="atom-bond b2"></i><span class="atom-sphere bromine a3">Br</span><i class="atom-bond b3"></i><span class="atom-sphere bromine a4">Br</span><span class="atom-sphere bromine a5">Br</span>'}
+};
+function setMolecularVisual(key,state='idle'){
+ const v=MOLECULAR_VISUALS[key]; if(!v)return;
+ document.getElementById('molNameFrom').textContent=v.from;
+ document.getElementById('molFormulaFrom').textContent=v.fromFormula;
+ document.getElementById('molNameTo').textContent=v.to;
+ document.getElementById('molFormulaTo').textContent=v.toFormula;
+ document.getElementById('molModelFrom').innerHTML=v.fromAtoms;
+ document.getElementById('molModelTo').innerHTML=v.toAtoms;
+ document.getElementById('molecularNote').textContent=v.note;
+ const scene=document.getElementById('molecularScene');
+ scene.classList.toggle('is-reacting',state==='approach'||state==='reacting');
+ scene.classList.toggle('is-complete',state==='complete');
+ scene.dataset.state=state;
+}
+function setLabStep(n){
+ document.querySelectorAll('.sim-step').forEach(el=>{
+  const step=Number(el.dataset.step);el.classList.toggle('is-active',step===n);el.classList.toggle('is-complete',step<n);
+ });
+}
+
+let currentExperiment='reduction', labTimers=[], quizIndex=0, quizScore=0, quizAnswered=false, quizResponses=[], lastQuizResult=null, currentStudent=null;
+// Dán URL Web App Apps Script vào đây sau khi triển khai Google Sheets.
+const GOOGLE_SCRIPT_URL = 'PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+const quizQuestions=[
+ {type:'Trắc nghiệm',text:'Trong phân tử amin, đặc điểm nào giúp nitrogen thể hiện tính base?',options:['Có liên kết đôi C=C','Có một cặp electron tự do có thể nhận proton','Luôn mang điện tích dương','Có nguyên tử oxygen'],answer:1,explain:'Cặp electron tự do trên nitrogen có thể liên kết với H⁺, vì vậy amin thể hiện tính base.'},
+ {type:'Trắc nghiệm',text:'Methylamine phản ứng với hydrochloric acid tạo sản phẩm nào?',options:['Methanol','Methylammonium chloride (CH₃NH₃Cl)','Nitrogen gas','Aniline'],answer:1,explain:'CH₃NH₂ + HCl → CH₃NH₃Cl. Amin nhận proton từ acid và tạo muối ammonium.'},
+ {type:'Trắc nghiệm',text:'Aniline phản ứng với bromine water tạo hiện tượng đặc trưng nào?',options:['Xuất hiện kết tủa trắng và màu bromine mất đi','Tạo kết tủa xanh lam','Giải phóng oxygen','Không có phản ứng trong mọi điều kiện'],answer:0,explain:'Aniline tạo kết tủa trắng 2,4,6-tribromoaniline và làm mất màu bromine water.'},
+ {type:'Trắc nghiệm',text:'Aniline phản ứng với nitrous acid ở khoảng 0–5°C tạo sản phẩm chính nào?',options:['Methanol','Muối phenyldiazonium','2,4,6-tribromoaniline','Methylammonium chloride'],answer:1,explain:'Ở nhiệt độ thấp 0–5°C, aniline có thể tạo muối phenyldiazonium; điều kiện rất quan trọng đối với phản ứng này.'},
+ {type:'Đúng / Sai',text:'Mọi amin đều là base mạnh như nhau trong nước.',answer:false,explain:'Sai. Amin thể hiện tính base yếu và độ base phụ thuộc cấu trúc, môi trường; aniline yếu base hơn nhiều alkylamine trong nước.'},
+ {type:'Đúng / Sai',text:'Alkylamine bậc một phản ứng với nitrous acid ở điều kiện thích hợp có thể tạo alcohol và giải phóng nitrogen gas.',answer:true,explain:'Đúng. Ví dụ methylamine tạo methanol, nitrogen và nước theo phương trình ở phần kiến thức.'},
+ {type:'Đúng / Sai',text:'Alkyl hóa ammonia luôn chỉ tạo duy nhất amin bậc một.',answer:false,explain:'Sai. Amin có thể tiếp tục bị alkyl hóa, nên hỗn hợp sản phẩm và muối ammonium có thể hình thành.'},
+ {type:'Trả lời ngắn',text:'Tên tiếng Anh của CH₃NH₂ là gì?',answers:['methylamine','methyl amine'],explain:'CH₃NH₂ có tên tiếng Anh là methylamine (methyl amine cũng được chấp nhận).'},
+ {type:'Trả lời ngắn',text:'Khử nitrobenzene tạo ra amin thơm nào? Trả lời bằng tên tiếng Anh.',answers:['aniline','phenylamine'],explain:'Sản phẩm amin thơm là aniline, còn có tên thay thế là phenylamine.'},
+ {type:'Trả lời ngắn',text:'Tên tiếng Anh của kết tủa trắng tạo ra khi aniline phản ứng với bromine water là gì?',answers:['2,4,6-tribromoaniline','tribromoaniline','2 4 6 tribromoaniline'],explain:'Kết tủa trắng là 2,4,6-tribromoaniline.'}
+];
+function setOptions(id,items,selected=''){const el=document.getElementById(id);el.innerHTML=items.map(([v,t])=>`<option value="${v}">${t}</option>`).join('');el.value=selected;}
+function fillExperiment(key){const e=EXPERIMENTS[key];setOptions('reactantA',e.a);setOptions('reactantB',e.b);setOptions('condition',e.conditions);setOptions('catalyst',e.catalysts);document.getElementById('simTitle').textContent=e.title;document.getElementById('simSubtitle').textContent=e.subtitle;document.getElementById('temperatureInfo').textContent=e.temp;document.getElementById('catalystInfo').textContent=e.catalystInfo;document.querySelectorAll('.exp-option').forEach(b=>b.classList.toggle('active',b.dataset.exp===key));const bottleText=key==='reduction'?[{label:'C₆H₅NO₂',cls:'brown',slot:'a',value:'nitrobenzene'},{label:'Fe/HCl',cls:'',slot:'b',value:'fehcl'},{label:'HEAT',cls:'purple',slot:'condition',value:'heat'}]:key==='alkylation'?[{label:'NH₃',cls:'',slot:'a',value:'ammonia'},{label:'CH₃Br',cls:'brown',slot:'b',value:'bromomethane'},{label:'NH₃ DƯ',cls:'purple',slot:'condition',value:'excess'}]:[{label:'C₆H₅NH₂',cls:'',slot:'a',value:'aniline'},{label:'Br₂(aq)',cls:'brown',slot:'b',value:'bromine'},{label:'H₂O',cls:'purple',slot:'condition',value:'aqueous'}];document.getElementById('bottleShelf').innerHTML=bottleText.map(a=>`<button class="bottle ${a.cls}" title="${a.label}" onclick="chooseFromBottle('${a.slot}','${a.value}')"><div class="liquid"></div><label>${a.label}</label></button>`).join('');setMolecularVisual(key);clearLabResult();resetVessel();}
+function selectExperiment(key){if(!EXPERIMENTS[key])return;currentExperiment=key;fillExperiment(key);document.getElementById('lab').scrollIntoView({behavior:document.body.classList.contains('reduced')?'auto':'smooth'});closeMenu();}
+function chooseFromBottle(slot,value){const ids={a:'reactantA',b:'reactantB',condition:'condition'};const el=document.getElementById(ids[slot]);if(!el)return;if([...el.options].some(o=>o.value===value)){el.value=value;clearLabResult();showToast('Đã chọn '+(slot==='a'?'chất ban đầu':slot==='b'?'thuốc thử':'điều kiện')+'. Hãy kiểm tra bảng thiết lập trước khi chạy.');}}
+function clearTimers(){labTimers.forEach(t=>clearTimeout(t));labTimers=[];}
+function setStatus(text,kind=''){const box=document.getElementById('reactionStatus');box.className='reaction-status '+kind;document.getElementById('statusText').textContent=text;}
+function resetVessel(){const sim=document.getElementById('simulation');sim.classList.remove('reacting','bubbling','run-reduction','run-alkylation','run-bromination');document.getElementById('flaskLiquid').className='flask-liquid';document.getElementById('precipitate').className='precipitate';document.getElementById('heatSource').classList.remove('visible');document.getElementById('simLabel').textContent='TRẠNG THÁI: CHỜ THAO TÁC';document.getElementById('stageCaption').textContent='Chọn chất phù hợp rồi nhấn “Tiến hành phản ứng” để theo dõi từng giai đoạn.';setLabStep(1);setMolecularVisual(currentExperiment,'idle');}
+function clearLabResult(){clearTimers();resetVessel();document.getElementById('equationResult').textContent='Phương trình sẽ xuất hiện tại đây.';document.getElementById('equationNames').textContent='Tên chất bằng tiếng Anh sẽ hiển thị kèm theo phương trình.';document.getElementById('observationResult').textContent='Theo dõi trạng thái bình phản ứng để quan sát hiệu ứng tương ứng.';document.getElementById('safetyResult').textContent='Mô phỏng khái niệm, không thay thế thí nghiệm có giám sát.';setStatus('Đang chờ lựa chọn chất phản ứng.');}
+function runReaction(){
+ clearTimers();resetVessel();
+ const e=EXPERIMENTS[currentExperiment],a=document.getElementById('reactantA').value,b=document.getElementById('reactantB').value,c=document.getElementById('condition').value,k=document.getElementById('catalyst').value;
+ if(!a||!b||!c||!k){setStatus('Hãy chọn đủ chất và điều kiện trước khi chạy mô phỏng.','error');return;}
+ const valid=a===e.expected.a&&b===e.expected.b&&c===e.expected.condition&&k===e.expected.catalyst;
+ if(!valid){setStatus('Tổ hợp chưa khớp với phản ứng đã khai báo. Hãy kiểm tra lại chất, điều kiện và vai trò tác nhân.','error');document.getElementById('simLabel').textContent='TRẠNG THÁI: CHƯA KHỚP';document.getElementById('stageCaption').textContent='Chưa đủ điều kiện để chạy mô hình này. Không tự ghép phương trình ngẫu nhiên.';document.getElementById('observationResult').textContent='Lựa chọn chưa phù hợp với phản ứng đang xem. Kiểm tra chất ban đầu, thuốc thử, điều kiện và vai trò chất xúc tác/tác nhân.';return;}
+ const motion=document.getElementById('motionToggle').checked,sim=document.getElementById('simulation');
+ sim.classList.add('run-'+currentExperiment);setLabStep(1);setMolecularVisual(currentExperiment,'idle');
+ setStatus('Bước 1/4 · Đang đối chiếu chất ban đầu và điều kiện đã chọn…');document.getElementById('simLabel').textContent='BƯỚC 1/4: CHUẨN BỊ';document.getElementById('stageCaption').textContent='Đang xác nhận chất phản ứng, tác nhân và điều kiện của mô hình.';
+ const stage2=()=>{
+  setLabStep(2);setMolecularVisual(currentExperiment,'approach');
+  document.getElementById('simLabel').textContent='BƯỚC 2/4: TIẾP CẬN';
+  document.getElementById('stageCaption').textContent='Các nhóm phân tử được đưa vào cùng sơ đồ phản ứng. Quan sát mô hình nhóm chức ở khung bên.';
+  setStatus('Bước 2/4 · Quan sát chất phản ứng và nhóm chức trước khi biến đổi…');
+  if(motion){sim.classList.add('reacting');if(currentExperiment==='reduction')document.getElementById('heatSource').classList.add('visible');}
+ };
+ const stage3=()=>{
+  setLabStep(3);setMolecularVisual(currentExperiment,'reacting');
+  document.getElementById('simLabel').textContent='BƯỚC 3/4: BIẾN ĐỔI';
+  const liquid=document.getElementById('flaskLiquid');liquid.className='flask-liquid '+e.liquid;
+  if(e.bubbles&&motion)sim.classList.add('bubbling');
+  if(e.precipitate&&motion)document.getElementById('precipitate').classList.add('on');
+  if(currentExperiment==='reduction')document.getElementById('stageCaption').textContent='Mô hình nhóm –NO₂ chuyển thành nhóm –NH₂. Hiệu ứng trong bình chỉ mang tính minh họa; theo dõi sơ đồ phân tử.';
+  else if(currentExperiment==='alkylation')document.getElementById('stageCaption').textContent='Nhóm methyl được minh họa liên kết với nitrogen; phản ứng thực tế có thể tiếp tục tạo sản phẩm alkyl hóa cao hơn.';
+  else document.getElementById('stageCaption').textContent='Bromine water nhạt màu dần; pha lỏng chuyển đục trắng đồng đều, lớp kết tủa trắng hình thành rõ ở đáy bình.';
+  setStatus('Bước 3/4 · Đang mô phỏng sự thay đổi nhóm chức và hiện tượng tương ứng…');
+ };
+ const stage4=()=>{
+  sim.classList.remove('reacting');document.getElementById('heatSource').classList.remove('visible');
+  setLabStep(4);setMolecularVisual(currentExperiment,'complete');
+  document.getElementById('simLabel').textContent='BƯỚC 4/4: HOÀN TẤT';document.getElementById('stageCaption').textContent=e.caption;
+  document.getElementById('equationResult').textContent=e.equation;document.getElementById('equationNames').textContent=e.names;document.getElementById('observationResult').textContent=e.observation;document.getElementById('safetyResult').textContent='Đây là mô phỏng giáo dục. Không suy ra quy trình, lượng hóa chất hoặc thông số thực nghiệm từ hoạt ảnh.';
+  setStatus('Mô phỏng hoàn tất. Xem lại phương trình, hiện tượng và mô hình nhóm chức bên cạnh.','success');
+ };
+ if(!motion){stage2();stage3();stage4();return;}
+ labTimers.push(setTimeout(stage2,2400));
+ labTimers.push(setTimeout(stage3,5400));
+ labTimers.push(setTimeout(stage4,10800));
+}
+function resetLab(){clearLabResult();document.getElementById('reactantA').selectedIndex=0;document.getElementById('reactantB').selectedIndex=0;document.getElementById('condition').selectedIndex=0;document.getElementById('catalyst').selectedIndex=0;showToast('Đã đặt lại mô phỏng.');}
+document.getElementById('motionToggle').addEventListener('change',e=>{document.body.classList.toggle('reduced',!e.target.checked);});
+
+function renderQuiz(){const q=quizQuestions[quizIndex];quizAnswered=false;document.getElementById('quizQuestionArea').classList.remove('hide');document.getElementById('quizResult').classList.remove('show');document.getElementById('questionType').textContent=q.type.toUpperCase();document.getElementById('questionNumber').textContent=`CÂU ${String(quizIndex+1).padStart(2,'0')}`;document.getElementById('questionText').textContent=q.text;document.getElementById('quizFeedback').className='quiz-feedback';document.getElementById('quizFeedback').textContent='';document.getElementById('nextQuestion').disabled=true;document.getElementById('nextQuestion').textContent=quizIndex===quizQuestions.length-1?'Xem kết quả →':'Câu tiếp theo →';document.getElementById('answerHint').textContent=q.type==='Trả lời ngắn'?'Nhập câu trả lời tiếng Anh hoặc tên chất tương đương.':'Chọn một đáp án.';const list=document.getElementById('answerList');list.innerHTML='';if(q.type==='Trắc nghiệm'){q.options.forEach((op,i)=>{const b=document.createElement('button');b.className='answer-option';b.innerHTML=`<span class="letter">${String.fromCharCode(65+i)}</span><span>${op}</span>`;b.onclick=()=>answerQuiz(i,b);list.appendChild(b);});}else if(q.type==='Đúng / Sai'){['Đúng','Sai'].forEach((op,i)=>{const b=document.createElement('button');b.className='answer-option';b.innerHTML=`<span class="letter">${i===0?'Đ':'S'}</span><span>${op}</span>`;b.onclick=()=>answerQuiz(i===0,b);list.appendChild(b);});}else{const input=document.createElement('input');input.className='quiz-input';input.id='shortAnswer';input.placeholder='Nhập câu trả lời của bạn…';input.setAttribute('aria-label','Câu trả lời ngắn');const button=document.createElement('button');button.className='btn btn-primary';button.textContent='Kiểm tra đáp án';button.onclick=()=>answerQuiz(document.getElementById('shortAnswer').value,button);list.appendChild(input);list.appendChild(button);}document.getElementById('progressText').textContent=`Câu ${quizIndex+1} / ${quizQuestions.length}`;document.getElementById('scoreText').textContent=`Điểm: ${quizScore}`;document.getElementById('progressBar').style.width=`${(quizIndex/quizQuestions.length)*100}%`;}
+function normalizeAnswer(s){return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d').replace(/[^a-z0-9]/g,'');}
+function answerQuiz(value,chosenEl){
+ if(quizAnswered)return;
+ const q=quizQuestions[quizIndex];
+ let correct=false;
+ if(q.type==='Trắc nghiệm')correct=value===q.answer;
+ else if(q.type==='Đúng / Sai')correct=value===q.answer;
+ else correct=q.answers.some(a=>normalizeAnswer(a)===normalizeAnswer(value));
+ quizAnswered=true;
+ if(correct)quizScore++;
+ let givenAnswer='';
+ if(q.type==='Trắc nghiệm')givenAnswer=q.options[value]||'';
+ else if(q.type==='Đúng / Sai')givenAnswer=value?'Đúng':'Sai';
+ else givenAnswer=String(value||'').trim();
+ const correctAnswer=q.type==='Trắc nghiệm'?q.options[q.answer]:(q.type==='Đúng / Sai'?(q.answer?'Đúng':'Sai'):q.answers[0]);
+ quizResponses[quizIndex]={soCau:quizIndex+1,loaiCau:q.type,cauHoi:q.text,traLoi:givenAnswer,dapAnDung:correctAnswer,ketQua:correct?'Đúng':'Sai',giaiThich:q.explain};
+ if(q.type!=='Trả lời ngắn'){
+  document.querySelectorAll('#answerList .answer-option').forEach((btn,i)=>{
+   btn.disabled=true;
+   if(q.type==='Trắc nghiệm'&&i===q.answer)btn.classList.add('correct');
+   if(q.type==='Đúng / Sai'&&((i===0)===q.answer))btn.classList.add('correct');
+  });
+  if(!correct&&chosenEl&&chosenEl.classList.contains('answer-option'))chosenEl.classList.add('incorrect');
+ }else{
+  const input=document.getElementById('shortAnswer');if(input)input.disabled=true;
+  document.querySelectorAll('#answerList button').forEach(b=>b.disabled=true);
+ }
+ const f=document.getElementById('quizFeedback');
+ f.className='quiz-feedback show '+(correct?'good':'bad');
+ f.innerHTML=`<strong>${correct?'Chính xác!':'Chưa đúng.'}</strong> ${q.explain}`;
+ document.getElementById('nextQuestion').disabled=false;
+ document.getElementById('scoreText').textContent=`Điểm: ${quizScore}`;
+ document.getElementById('progressBar').style.width=`${((quizIndex+1)/quizQuestions.length)*100}%`;
+ document.getElementById('answerHint').textContent=correct?'Bạn đã ghi điểm câu này.':'Đọc lời giải rồi tiếp tục nhé.';
+}
+function nextQuizQuestion(){
+ if(!quizAnswered)return;
+ if(quizIndex<quizQuestions.length-1){quizIndex++;renderQuiz();return;}
+ document.getElementById('quizQuestionArea').classList.add('hide');
+ document.getElementById('quizResult').classList.add('show');
+ document.getElementById('finalScore').textContent=`${quizScore}/10`;
+ document.getElementById('progressText').textContent='Đã hoàn thành';
+ document.getElementById('scoreText').textContent=`Điểm: ${quizScore}/10`;
+ document.getElementById('progressBar').style.width='100%';
+ const title=quizScore>=9?'Xuất sắc!':quizScore>=7?'Làm tốt lắm!':quizScore>=5?'Bạn đang tiến bộ!':'Cùng ôn lại nhé!';
+ document.getElementById('finalTitle').textContent=title;
+ document.getElementById('finalNote').textContent=quizScore>=8?'Bạn đã nắm khá chắc các ý trọng tâm của bài amin.':'Hãy xem lại phần kiến thức và lời giải từng câu, sau đó thử lại để ghi nhớ tốt hơn.';
+ lastQuizResult={timestamp:new Date().toISOString(),student:currentStudent||{},correctCount:quizScore,totalQuestions:quizQuestions.length,score10:quizScore,percentage:Math.round(quizScore/quizQuestions.length*100),responses:quizResponses.slice()};
+ submitQuizResultToSheets(lastQuizResult);
+}
+function restartQuiz(){quizIndex=0;quizScore=0;quizAnswered=false;quizResponses=[];lastQuizResult=null;renderQuiz();document.getElementById('quiz').scrollIntoView({behavior:document.body.classList.contains('reduced')?'auto':'smooth'});}
+function setSheetStatus(message,kind='warn'){
+ const node=document.getElementById('sheetStatus');if(!node)return;
+ node.className='sheet-status '+kind;node.textContent=message;
+}
+async function submitQuizResultToSheets(result){
+ const url=String(GOOGLE_SCRIPT_URL||'').trim();
+ if(!url||url==='PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE'){
+  setSheetStatus('Chưa kết nối Google Sheets. Kết quả vẫn hiển thị ở đây; giáo viên cần triển khai Apps Script và dán URL vào GOOGLE_SCRIPT_URL trong file HTML.','warn');
+  return;
+ }
+ setSheetStatus('Đang gửi điểm và thông tin học sinh đến Google Sheets…','warn');
+ const record={
+  timestamp:result.timestamp,
+  hoTen:result.student.name||'',
+  lop:result.student.className||'',
+  truong:result.student.school||'',
+  soCauDung:result.correctCount,
+  tongSoCau:result.totalQuestions,
+  diem:result.score10,
+  phanTram:result.percentage,
+  chiTiet:JSON.stringify(result.responses)
+ };
+ try{
+  await fetch(url,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body:new URLSearchParams({payload:JSON.stringify(record)}).toString()});
+  setSheetStatus('Đang gửi yêu cầu lưu kết quả. Hãy kiểm tra bảng tính Google Sheets để xác nhận dữ liệu đã được ghi.','ok');
+ }catch(err){
+  setSheetStatus('Không gửi được đến Google Sheets. Hãy kiểm tra kết nối mạng, URL Web App và quyền truy cập. Bạn vẫn có thể tải kết quả CSV.','warn');
+ }
+}
+function downloadQuizResult(){
+ if(!lastQuizResult){showToast('Hãy hoàn thành bài luyện tập trước khi tải kết quả.');return;}
+ const r=lastQuizResult;
+ const rows=[['Thời gian','Họ và tên','Lớp','Trường','Số câu đúng','Tổng câu','Điểm / 10','Phần trăm','Chi tiết câu trả lời'],[r.timestamp,r.student.name||'',r.student.className||'',r.student.school||'',r.correctCount,r.totalQuestions,r.score10,r.percentage+'%',JSON.stringify(r.responses)]];
+ const csv='\ufeff'+rows.map(row=>row.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');
+ const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='ket-qua-amine-lab.csv';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(a.href);
+}
+
+function openIdentityGate(edit=false){
+ const gate=document.getElementById('identityGate');
+ const form=document.getElementById('identityForm');
+ document.getElementById('studentFullName').value=currentStudent?.name||'';
+ document.getElementById('studentClass').value=currentStudent?.className||'';
+ document.getElementById('studentSchool').value=currentStudent?.school||'';
+ document.getElementById('identityError').textContent='';
+ document.getElementById('identityTitle').innerHTML=edit?'Cập nhật <span>thông tin học sinh</span>':'Chào mừng bạn đến với <span>AMINE LAB</span>';
+ document.querySelector('.identity-intro').textContent=edit?'Kiểm tra hoặc sửa thông tin để kết quả bài làm được lưu đúng người.':'Điền thông tin học sinh trước khi học. Khi hoàn thành bài luyện tập, thông tin này sẽ đi kèm kết quả nếu Google Sheets đã được kết nối.';
+ gate.hidden=false;document.body.classList.add('identity-open');
+ setTimeout(()=>document.getElementById('studentFullName').focus(),40);
+}
+function closeIdentityGate(){document.getElementById('identityGate').hidden=true;document.body.classList.remove('identity-open');}
+function applyStudentInfo(student){
+ currentStudent=student;
+ sessionStorage.setItem('amineLabStudent',JSON.stringify(student));
+ document.getElementById('studentNameTop').textContent=student.name;
+ document.getElementById('studentMetaTop').textContent=`Lớp ${student.className} · ${student.school}`;
+ document.getElementById('studentAvatar').textContent=(student.name.trim().split(/\s+/).slice(-1)[0]||'H').charAt(0).toUpperCase();
+ const contactName=document.getElementById('contactName');if(contactName&&!contactName.value)contactName.value=student.name;
+ closeIdentityGate();
+ showToast('Chào mừng '+student.name+'!');
+}
+document.getElementById('identityForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const student={name:document.getElementById('studentFullName').value.trim(),className:document.getElementById('studentClass').value.trim(),school:document.getElementById('studentSchool').value.trim()};
+ if(!student.name||!student.className||!student.school){document.getElementById('identityError').textContent='Bạn hãy điền đủ Họ và tên, Lớp và Trường nhé.';return;}
+ applyStudentInfo(student);
+});
+function bootStudentGate(){
+ try{const saved=sessionStorage.getItem('amineLabStudent');if(saved){const student=JSON.parse(saved);if(student.name&&student.className&&student.school){applyStudentInfo(student);return;}}}catch(_e){}
+ openIdentityGate(false);
+}
+function showToast(text){const t=document.getElementById('toast');t.textContent=text;t.classList.add('show');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.classList.remove('show'),2300)}
+function closeMenu(){const n=document.getElementById('navLinks');if(n)n.classList.remove('open');const t=document.getElementById('menuToggle');if(t)t.setAttribute('aria-expanded','false')}
+document.querySelectorAll('.sidebar-link[href^="#"]').forEach(a=>a.addEventListener('click',()=>{document.querySelectorAll('.sidebar-link').forEach(x=>x.classList.toggle('active',x===a));closeMenu();}));
+const navAnchors=[...document.querySelectorAll('.sidebar-link[href^="#"]')];
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){navAnchors.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id));}})},{rootMargin:'-25% 0px -60% 0px'});document.querySelectorAll('main section[id]').forEach(sec=>observer.observe(sec));}
+window.addEventListener('scroll',()=>document.getElementById('topButton').classList.toggle('show',window.scrollY>500));
+document.getElementById('contactForm').addEventListener('submit',e=>{e.preventDefault();const msg=document.getElementById('formMessage');msg.textContent='Đây là bản demo: nội dung chưa được gửi đi hoặc lưu trên máy chủ. Khi triển khai thật, cần kết nối dịch vụ nhận biểu mẫu.';msg.classList.add('show');});document.getElementById('year').textContent=new Date().getFullYear();
+fillExperiment(currentExperiment);renderQuiz();bootStudentGate();
+</script>
+</body>
+</html>
